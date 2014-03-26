@@ -32,7 +32,7 @@ THEME = "pelican-themes/subtle"
 
 DISPLAY_CATEGORIES_ON_MENU = False
 
-OUTPUT_PATH = 'output/bheal521.github.io'
+OUTPUT_PATH = '../bheal521.github.io'
 
 DISQUS_SITENAME = "bheal521"
 
