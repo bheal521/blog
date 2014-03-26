@@ -32,9 +32,9 @@ Quotes:
 >
 
 Lists are also easy in Markdown:
-*one
-*two
-*three
+*	one
+*	two
+*	three
 
 Finally, you are able to easily indicate code within a paragraph. For example, 'foo()'. Amazing right!!?!?!!?
 Ok and one last thing for now, blocks of code are also easily written in Markdown:
