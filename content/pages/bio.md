@@ -3,7 +3,7 @@ Date: 2014-03-26 16:30
 Author: Ben Healy
 Slug: bio
 
-<img style="float:left" src="https://github.com/bheal521/bheal521.github.io/images/myAvatar.jpg" />
+<img style="float:left" src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg" />
 
 Hi, I'm Ben.
 ===============
