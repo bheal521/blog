@@ -18,7 +18,7 @@
 /***** Global *****/
 /* Body */
 body {
-    background: url(("https://raw2.github.com/amygdalama/blog-source/master/pelican-themes/subtle/static/css/noisy_grid.png");
+    background: url(("https://raw2.github.com/bheal521/blog/master/pelican-themes/subtle/static/css/noisy_grid.png");
     font-family: 'Droid Sans', sans-serif;
     font-size: 14px ;
     line-height: 1.429;
@@ -160,7 +160,7 @@ img.left, figure.left {float: right; margin: 0 0 2em 2em;}
 #banner {
 	margin: 0 auto;
 	padding: 2.5em 0 155px 0;
-	background-image:url("https://raw2.github.com/bheal521/bheal521.github.io/master/images/header.png");
+	background-image:url("header.png");
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-position: 0 115px;
