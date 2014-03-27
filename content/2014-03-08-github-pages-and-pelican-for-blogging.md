@@ -25,6 +25,7 @@ But Markdown still has built in syntax to address formatting:
 ###Header 3
 
 Quotes:
+
 >This is an example of a block quote,
 >you're able to insert these very easily
 >into any given document
@@ -32,11 +33,12 @@ Quotes:
 >
 
 Lists are also easy in Markdown:
-*	one
-*	two
-*	three
 
-Finally, you are able to easily indicate code within a paragraph. For example, 'foo()'. Amazing right!!?!?!!?
+* one
+* two
+* three
+
+Finally, you are able to easily indicate code within a paragraph. For example, `foo()`. Amazing right!!?!?!!?
 Ok and one last thing for now, blocks of code are also easily written in Markdown:
 
     :::bash
