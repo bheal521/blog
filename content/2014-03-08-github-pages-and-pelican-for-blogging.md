@@ -5,20 +5,25 @@ Tags: github pages, pelican, git, blogging
 Slug: github-pages-and-pelican-for-blogging
 Author: Ben Healy
 
-Hello, world. This blog is brought to you by a combination of GitHub [pages](http://pages.github.com/) and [Pelican](http://blog.getpelican.com/). Not so long ago I came to you
-on a website that I developed from scratch. I bought a web-address, and jumped right into the HTML. Turns out, I'm just not all that interested in developing HTML, CSS, and Java from scratch.
-Unfortunately, it became a humongous time-suck that took away from what I am actually interested in: playing with data. 
+Hello, world. This website is brought to you using a combination of GitHub Pages and Pelican, a Python-based static site generator. 
+Not so long ago I built a website from scratch with the intention of gaining some web-development skills. I read up on HTML, CSS and JavaScript and even dove into some fairly simple D3.js to try
+and bring some data-analysis to life on the site. As it turns out, I'm just not all that interested in being responsible for every little piece of web development necessary to carry on that kind
+of operation. Unfortunately, it became a humongous time-suck that took away from what I am actually interested in: playing with data. 
 
-While I would love for someone else to turn my experiments into interactive web-applications,  I don't have the time... Let me rephrase that. I'm not interested (at least at the current moment) in
-taking the time to wade through my poorly written CSS and HTML, much less Javascript... in order to make a home-made solution from scratch. It comes as no surprise to anyone that there are seemingly an unlimited 
-number of ways with which one could create a less-customizable blogging platform. The trouble is, I really do want to have more control of the site if I choose to dive deeper. I just don't want to HAVE
-to do everything. So shortly after I stopped working on my old site, I stumbled across an simple blogging site from a fellow data scientist. [Greg Reda](http://www.gregreda.com/) shot to the top of some subReddits
-that I follow, as well as [Hacker News](https://news.ycombinator.com/). His article on the principles of good data analysis caught my eye, and the eyes of many, many others. But his simple website was 
-pretty much exactly what I was looking to do. I reached out to him, and he suggested Pelican, a Python based static site generator. Once set up, Pelican will turn textual documents written in [Markdown](https://daringfireball.net/projects/markdown/)
-into HTML. What's more, there are pre-made CSS formats that users can tweak to their hearts delight. It seemed like a great combination.
+While I am not forever swearing off turning my findings into interactive web-applications,  I don't have the time to... wait, let me rephrase that... I'm not interested (at least at the current moment) 
+in having to slave over the web-development that's necessary for each and every post I write. Having to wade through my poorly written CSS, HTML, and most of all JavaScript really sucks. So, instead I
+looked for a way to still have more control over my site than I would on a standard Google Blogger or Wordpress site but also have a built-in safety net that could do a bunch of the work for me when I 
+just want to write something, and post some results of whatever I'm working on. It will likely come as no surprise to anyone that there are seemingly an unlimited 
+number of ways with which one could create a site that fits the bill. But after doing some research I settled on using GitHub [Pages](http://pages.github.com/) (because it's free! no more monthly
+site hosting bills) and [Pelican](http://blog.getpelican.com/). Pelican is a static site generator that turns markdown text documents into static html for you, has a great online community that is
+helpful when in search of help, and has lots of cool built in features that you can take advantage of but don't have to. You can use a pre-made theme for your site, but then still get at all of the
+HTML and CSS if you want to modify it to your liking. If you're interested in learning more, check it out: [Pelican Blog](http://blog.getpelican.com/)
 
-I'm new to the world of Markdown text, but as I write to you now I am already getting the hang of it. It is far more like regular written text than, say, HTML. No need to worry about closing off brackets.
-But Markdown still has built in syntax to address formatting:
+Pelican lets users write things in Markdown, which is a language I've never used myself, but is praised in coding communities all over the place. After using it for about an hour, I can see why.
+It's intuitive and it is fairly low-brow in terms of complexity. Sure beats the hell out of trying to remember to close out all the brackets in an HTML doc. But Markdown still has its own syntax that
+allows users to easily format things. Just for the sake of me learning, let's take a look:
+
+Headers of varying levels:
 
 #Header 1
 ##Header 2
@@ -30,16 +35,17 @@ Quotes:
 >you're able to insert these very easily
 >into any given document
 >>You can even nest block quotes!
->
 
-Lists are also easy in Markdown:
+Lists:
 
 * one
 * two
 * three
 
-Finally, you are able to easily indicate code within a paragraph. For example, `foo()`. Amazing right!!?!?!!?
-Ok and one last thing for now, blocks of code are also easily written in Markdown:
+Ok, so I think this is the best part. Because I will be discussing some of my coding projects here, it is nice to be able to show users some snippets of code while walking through
+examples. I've always wondered how people did this on their respective blogs, I guess I always thought that they just took screen shots and embedded the image into a post. But no! It is
+far simpler than that if you are using Markdown. You just indicate what language/environment you are writing in (Python, R, command prompt, etc) and it will create all of the syntax highlighting
+for you. Here is an example of something being committed to GitHub in bash:
 
     :::bash
     $ cd blog/      # root directory for my blog
@@ -50,7 +56,14 @@ Ok and one last thing for now, blocks of code are also easily written in Markdow
     $ git push origin master    # pushes to my blog-source repo on GitHub
     $ cd output/    # pelican-generated output folder
     $ git commit -am "committing pelican-generated site content"
-    $ git push origin master    # pushes to my amygdalama.github.io repo
+    $ git push origin master    # pushes to my bheal521.github.io repo
 
-	
-Ok, so this was a lame first post. So be it. But I'm psyched to start using Pelican with Markdown in order to blog here. Stay tuned for some more interesting revelations.
+And here is something in Python:
+
+	:::python
+	def hello()
+		print 'Hello World, Markdown is great!'
+		
+
+Ok, so this was a lame first post. So be it. But I'm psyched to start using Pelican with Markdown in order to document some of my analytical explorations here. I'm currently working on
+scraping the Pitchfork music review website of the most recent ~10k reviews in order to do some text analysis. Stay tuned for what will hopefully be something more interesting.
