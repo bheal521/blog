@@ -1,0 +1,7 @@
+## This is the command line script that needs to be run to regenerate the static HTML for the blog
+
+# First get the command line to the correct directory
+cd C:\users\ben\documents\github\blog
+
+#then run the following
+pelican content -s pelicanconf.py # or replace the last part with publishconf.py
