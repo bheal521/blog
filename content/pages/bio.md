@@ -10,9 +10,10 @@ Hi, I'm Ben.
 I am a consultant at [ASR Analytics], a consulting firm based in Washington DC. Currently, I'm working on a project that seeks to quantify the 
 benefits of a whole bunch of federal stimulus dollars that were spent on building out [broadband infrastructure] across the country.
 
-In my spare time, I am attempting to continue building on my data analysis skills by tinkering around with a handful of projects. In general, I like to 
-find something interesting hidden in some data using mostly Python and R. The topics will vary, but is likely to deal with something I think is super-kewl!
-These things include: sportz, good food, and rad tunes. As a budding data scientist, my goal is to learn by doing. This site gives me a chance to document 
+In my spare time, I am continuing to build on my data analysis skills by tinkering around with a handful of projects. In general, I'm using
+Python and R (with a heavy dependency on both of their respectively awesome online communities) in an attempt to find something interesting 
+hidden in some data. The topics will vary, but will likely deal with something I think is super-kewl! These things include: sportz, good food, 
+and rad tunes. As a budding data scientist, my goal is to learn by doing. This site gives me a chance to document some of 
 the things I learn about along the way. I'll try to keep any code I've developed for past and on-going projects up to date on [GitHub]. Check out my [Contacts]
 page if you'd like to get in touch in some way shape or form!
 
