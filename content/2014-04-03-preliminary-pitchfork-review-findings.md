@@ -76,9 +76,9 @@ up over 850 words. Towards the lengthy side, we find Mr. Ian Cohen -- writing an
 
 Next I took a look at the actual content of these reviews. Using R's text mining and word cloud packages, I did some very minimal clean-up of the text and created a word cloud showing some of
 the terms that were used most frequently. Again, this was done using only the reviews of these "heavy hitters" -- writers with more than 100 reviews under their belt. The relative size of the word
-indicates its frequency in the reviews. There's some debate over whether or not word clouds are useful. The [h83rs](http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/) say that it's essentially impossible to really draw insight from a jumbled bag of
-word frequencies and that words are only meaningful in context. To that I say -- yeah you're probably right... but I think they look kinda cool and at in this example at least show me some of the
-more common adjectives used to describe music. 
+indicates its frequency in the reviews. There's some debate over whether or not word clouds are useful. The [h83rs](http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/) say that it's essentially 
+impossible to draw insight from a jumbled bag of word frequencies and that words are only meaningful in context. To that I say -- yeah you're probably right... but I think they look kinda cool 
+and in this particular example they at least show me some of the more common adjectives used by Pitchfork writers to describe music. 
 
 <img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png" alt="Pitchfork-review-wordcloud" style="margin:auto; width:75%;display:block">
 
