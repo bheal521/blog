@@ -62,7 +62,7 @@ had published just one review and sixty-six writers had published ten or fewer r
 | 250-500       | 7             |
 | 500+          | 1             |
 
-Who is that lone individual that has written more than FIVE HUNDRED reviews, you ask? Well, if you are familiar with Pitchfork it will come as no surprise that is is the one and only [Ian Cohen](http://pitchfork.com/staff/ian-cohen/). 
+Who is that lone individual that has written more than FIVE HUNDRED reviews, you ask? Well, if you are familiar with Pitchfork it will come as no surprise that it is the one and only [Ian Cohen](http://pitchfork.com/staff/ian-cohen/). 
 I was most interested in the heavy-hitters, those that had written over 100 reviews -- so I subset my results to just them, of which there were 30. Below is a quick summary of those writers and their
 stats. The bars are shaded according to the number of reviews the writer completed,  and the number floating above each bar is the average word count for that particular writer's reviews.
 
