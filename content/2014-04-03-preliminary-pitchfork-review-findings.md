@@ -9,7 +9,7 @@ Everyone likes to think that they listen to the **best** music. If you're a bit 
 that someone who listens to only the Top 40 would understand. I absolutely fall under this category; I can sometimes even convince myself that my general preferences aren't curated for me by 
 [Pitchfork](http://pitchfork.com). But in reality, the reviews, ratings and general opinion of this site have had a huge influence on my musical preferences and, in using the site
 as my musical gospel, I ensure that my "unique" taste in music is shared by the masses (just slightly smaller masses than those that listen only to radio hits). So, with all of my angsty appreciation 
-of this site in mind, I thought it would be interesting to take a closer look at the reviews and reviewers that have helped shape my *melodic proclivities*
+of this site in mind, I thought it would be interesting to take a closer look at the reviews and reviewers that have helped shape my *melodic proclivities*.
 
 ## Web Scraping ##
 Using Python and a package called [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/), I created a program that scraped the most recent 10,000 reviews published on Pitchfork. 
@@ -47,8 +47,8 @@ and it is still in development but you can check them out on GitHub. It appears 
 ## Initial Results ##
 So, what did I find?
 
-There were about 170 different reviewers that published one of the most recent 10,000 reviews on Pitchfork. But many of the reviewers had written one, or just a couple of reviews. Twenty-five reviewers
-had published just one review and sixty-six reviewers had published ten or fewer reviews. The table below shows the general breakdown the number of reviews completed by writers.
+There were about 170 different writers that published at least one of the most recent 10,000 reviews on Pitchfork. But many had written one, or just a couple of reviews. Twenty-five writers
+had published just one review and sixty-six writers had published ten or fewer reviews. The table below shows the general breakdown of how many writers wrote how many reviews:
 
 | # of Reviews  | # of Writers  | 
 | ------------: |:--------------| 
@@ -66,7 +66,7 @@ Who is that lone individual that has written more than FIVE HUNDRED reviews, you
 I was most interested in the heavy-hitters, those that had written over 100 reviews -- so I subset my results to just them, of which there were 30. Below is a quick summary of those writers and their
 stats. The bars are shaded according to the number of reviews the writer completed,  and the number floating above each bar is the average word count for that particular writer's reviews.
 
-![Pitchfork-writers-stats](https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviewers_BarChart.png)
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviewers_BarChart.png" alt="Pitchfork-writers-stats" width="100%", height="110%">
 
 It's interesting to see that most of these writers have an average score somewhere right between 6 and 7, with a handful of exceptions. But nobody has an average below 6, even Ian Cohen --  who is just shy of
 having the lowest average score. He's averaging slightly higher than a 6.2 but Adam Moerder is down at a 6.1. Wouldn't want my upcoming LP on his desk... There also appears to be no relationship
@@ -80,9 +80,9 @@ indicates its frequency in the reviews. There's some debate over whether or not 
 word frequencies and that words are only meaningful in context. To that I say -- yeah you're probably right... but I think they look kinda cool and at in this example at least show me some of the
 more common adjectives used to describe music. 
 
-![Pitchfork-review-wordcloud](https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png)
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png" alt="Pitchfork-review-wordcloud" width="85%">
 
-So, draw from the above what you will (or don't). I plan to do some more advanced text analysis work looking at not just word frequencies, but also look at the words that are associated with one
+So, draw from the above what you will (or don't you h83r). I plan to do some more advanced text analysis work looking at not just word frequencies, but also look at the words that are associated with one
 another, and some word clustering to get a better sense of context. I'm also reading up a bit on sentiment-analysis, so I may try and look at scoring each writers reviews to score their sentiment
 and see how that relates to their scoring of an album. But this is likely to be tough... the sarcasm-meter is likely to be high in some of the reviews and it will be tough to train a model to pick
 up on that. But stay tuned!
