@@ -4,7 +4,6 @@ Category: Projects
 Tags: python, R, text analysis
 Slug: Preliminary-Pitchfork-Review-Text-Analysis
 Author: Ben Healy
-Status: draft
 
 Everyone likes to think that they listen to the **best** music. If you're a bit of a music snob, you not only think that your music taste is the best, but that it's unique and eclectic -- not something
 that someone who listens to only the Top 40 would understand. I absolutely fall under this category; I can sometimes even convince myself that my general preferences aren't curated for me by 
