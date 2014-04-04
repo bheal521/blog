@@ -80,7 +80,7 @@ indicates its frequency in the reviews. There's some debate over whether or not 
 impossible to draw insight from a jumbled bag of word frequencies and that words are only meaningful in context. To that I say -- yeah you're probably right... but I think they look kinda cool 
 and in this particular example they at least show me some of the more common adjectives used by Pitchfork writers to describe music. 
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld1.png" alt="Pitchfork-review-wordcloud" style="margin:auto; width:75%;display:block">
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png" alt="Pitchfork-review-wordcloud" style="margin:auto; width:75%;display:block">
 
 So, draw from the above what you will (or don't you h83r). From here, I plan to do some more advanced text analysis looking beyond just word frequencies. For example, I might explore word 
 correlation/association with other words as well as some word clustering to get a better sense of context. I'm reading up a bit on sentiment-analysis as well, so I may try and sift through
