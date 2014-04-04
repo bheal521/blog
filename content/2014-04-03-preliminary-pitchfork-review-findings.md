@@ -90,3 +90,12 @@ which increases the difficulty when training a model to deal with that appropria
 Do you have any comments on what I've found so far? Ideas for how to take it further? Leave a comment below or get in touch with me in some form or another 
 on my [Contact page](http://bheal521.github.io/pages/contact.html)!
 
+##*EDIT 4-4-14*##
+I saw earlier today that Ian Cohen got his panties in a bunch when some d00d from Village Voice critiqued his recent [Cloud Nothings review](http://pitchfork.com/reviews/albums/19075-cloud-nothings-here-and-nowhere-else/).
+
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/cohen_tweet.png" alt="ian_cohen_tweet" style="margin:auto; width:25%;display:block">
+
+Here's a link to the holier-than-thou piece: [Stop Using Clichés...](http://blogs.villagevoice.com/music/2014/04/music_writing_no_nos.php)
+In the midst of his blowhard-ing Mr Village-Voice goes on a rant about the use of the word "sonic" in music reviews. I went back and took a look at the word cloud above and... low and behold, there 
+it is sitting right above the **L** in 'album' (album is in red near the center of the image). Remember, this wordcloud is from the reviews of the 30 writers who have written the most in the 
+past couple years not just Ian Cohen, but still -- kinda funny.
