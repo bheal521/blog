@@ -4,6 +4,7 @@ Category: Blog
 Tags: github pages, pelican, git, blogging
 Slug: github-pages-and-pelican-for-blogging
 Author: Ben Healy
+Summary: Blogging with Pelican and Python, HELLO WORLD. Not much to see here.
 
 Hello, world. This website is brought to you using a combination of GitHub Pages and Pelican, a Python-based static site generator. 
 Not so long ago I built a website from scratch with the intention of gaining some web-development skills. I read up on HTML, CSS and JavaScript and even dove into some fairly simple D3.js to try

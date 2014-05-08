@@ -21,14 +21,25 @@ TAG_FEED_ATOM = 'feeds/tags/%s.atom.xml'
 LINKS = False
 
 # Social widget
-SOCIAL = False
+#SOCIAL = False
+
+# Variables for the crowsfoot theme
+EMAIL_ADDRESS = 'peterbenjamin.healy@gmail.com'
+GITHUB_ADDRESS = 'https://github.com/bheal521'
+TWITTER_ADDRESS = 'https://twitter.com/bheal521'
+PROFILE_IMAGE_URL = 'https://raw2.github.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg'
+SHOW_ARTICLE_AUTHOR = False
+LICENSE_URL = 'http://creativecommons.org/licenses/by-sa/4.0/'
+LICENSE_NAME = 'CC BY-SA'
+
+#FEED_RSS = 
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 RELATIVE_URLS = True
 
-THEME = "pelican-themes/subtle"
+THEME = "pelican-themes/crowsfoot"
 
 DISPLAY_CATEGORIES_ON_MENU = False
 

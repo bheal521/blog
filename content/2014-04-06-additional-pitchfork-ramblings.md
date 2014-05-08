@@ -4,6 +4,7 @@ Category: Projects
 Tags: R, music, Pitchfork
 Slug: Continued-Analysis-of-Pitchfork-Reviews
 Author: Ben Healy
+Summary: Does Pitchfork penalize bands that aren't new?
 
 The last few days I've looked over a lot of great information on natural language processing and sentiment analysis. There are plenty of really great examples 
 of how this has been done. Many of the [examples](http://www.sjwhitworth.com/sentiment-analysis-in-python-using-nltk/) I found dealt with classifying tweets 

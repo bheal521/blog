@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="content">
+
+  <h3 class="posttitle">
+    <a class="nodec" href="/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">
+      {{ article.title }}
+    </a>
+  </h3>
+
+  <div class="postinfo">
+    <p class="published" title="{{ article.date.isoformat() }}">
+      {{ article.locale_date }}
+    </p>
+
+    {% if article.author and SHOW_ARTICLE_AUTHOR %}
+    <address class="vcard author">
+      By <a class="nodec" href="{{ SITEURL }}/{{ article.author.url }}">{{ article.author }}</a>
+    </address>
+    {% endif  %}
+  </div><!-- .postinfo -->
+
+  <div class="article">
+    {{ article.content }}
+  </div><!-- .content -->
+
+  {% if DISQUS_SITENAME %}
+    <div class="comments">
+      <h2 class = "other-articles">Comments</h2>
+      <div id="disqus_thread"></div>
+      <script type="text/javascript">
+        var disqus_identifier = "{{ article.url }}";
+        (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://{{ DISQUS_SITENAME }}.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+        </script>
+    </div>
+    {% endif %}
+</section>
+
+{% endblock %}
