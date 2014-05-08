@@ -20,8 +20,9 @@ to query the database for analysis.
 The following Python code shows how BeautifulSoup reads in a web page, turns it into *soup*, and then searches through the HTML tags until it gets to the node of interest. I've found using the Chrome
 browser's developer tools is an awesome way to sift through a site's source HTML to figure out where the information you're interested in scraping lives.
 
-	:::Python
-	import urllib2 #this package is also needed to read in the website and grab the HTML
+	:::python
+	#this package is also needed to read in the website and grab the HTML
+	import urllib2 
 	from bs4 import BeautifulSoup
 	baseurl= "http://pitchfork.com/reviews/albums/19075-cloud-nothings-here-and-nowhere-else/"
 	page = urllib2.urlopen(baseurl).read()

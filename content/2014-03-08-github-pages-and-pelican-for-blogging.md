@@ -58,13 +58,14 @@ for you. Here is an example of something being committed to GitHub in bash:
     $ cd output/    # pelican-generated output folder
     $ git commit -am "committing pelican-generated site content"
     $ git push origin master    # pushes to my bheal521.github.io repo
+	
 
 And here is something in Python:
 
 	:::python
 	def hello()
 		print 'Hello World, Markdown is great!'
-		
+	
 
 Ok, so this was a lame first post. So be it. But I'm psyched to start using Pelican with Markdown in order to document some of my analytical explorations here. I'm currently working on
 scraping the Pitchfork music review website of the most recent ~10k reviews in order to do some text analysis. Stay tuned for what will hopefully be something more interesting.

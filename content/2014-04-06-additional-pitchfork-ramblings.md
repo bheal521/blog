@@ -19,10 +19,10 @@ for not being new enough? For example, there is a band called [Sleigh Bells](htt
 albums reviewed by Pitchfork. Their first album, [Treats](http://pitchfork.com/reviews/albums/14251-treats/), was released in 2010 and brought this new 
 *BIG* sound that was described by the reviewer as music that,
 
- >>>just seemed bigger than it had before, 
- >>>like it took up more space and hit  
- >>>with more force and went further than 
- >>>once seemed possible.
+ >just seemed bigger than it had before, 
+ >like it took up more space and hit  
+ >with more force and went further than 
+ >once seemed possible.
  
  The writer reviewed the album very favorably and awarded it an 8.7, enough to get it on the [Best New Music](http://pitchfork.com/reviews/best/albums/) portion of the website, which I'm sure
  had lots of benefits in terms of gaining new listeners. I know that is where I first saw them. But Sleigh Bells released two more albums in the three years that

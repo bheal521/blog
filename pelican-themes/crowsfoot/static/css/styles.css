@@ -209,6 +209,38 @@ sub {
     margin-bottom: 30px;
 }
 
+/* Tables */
+table {margin: .5em auto 1.5em auto; width: 50%;
+	 border: 1px solid black;}
+	
+	/* Thead */
+	thead th {padding: .5em .4em; text-align: left;
+			background-color:MidnightBlue;
+			border: 1px solid black;
+			color:white;}
+	thead td {background-color:MidnightBlue;
+			border: 1px solid black;
+			color:white;}
+
+	/* Tbody */
+	tbody td {padding: .5em .4em;
+			background-color:LightGray;
+			border: 1px solid black;}
+	tbody th {background-color:LightGray;
+			border: 1px solid black;}
+	
+	tbody .alt td {background-color:LightGray;
+				border: 1px solid black;}
+	tbody .alt th {background-color:LightGray;
+				border: 1px solid black;}
+	
+	/* Tfoot */
+	tfoot th {background-color:LightGray;
+			border: 1px solid black;}
+	tfoot td {background-color:LightGray;
+			border: 1px solid black;}
+
+
 /* Code */
 
 .codehilite, .highlight { /* Put code blocks in the right place. */
