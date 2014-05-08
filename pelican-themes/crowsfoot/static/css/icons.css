@@ -63,6 +63,10 @@
     content: "";
     background: transparent url("https://raw2.github.com/bheal521/bheal521.github.io/master/images/linkedin-1024-fill1.png") no-repeat 0 0;
     background-size: 100%;}
-.icon-linkedin:hover {
-background: url("https://raw2.github.com/bheal521/bheal521.github.io/master/images/AFTER_linkedin-1024-fill1.png") no-repeat;
-}
+.icon-linkedin:hover { display: inline-block;
+	 width: 20px;
+    height: 20px;
+	margin-left: 5px;
+	content: url("https://raw2.github.com/bheal521/bheal521.github.io/master/images/AFTER_linkedin-1024-fill1.png") no-repeat 0 0;
+	background: "";
+	background-size: 100%;}
