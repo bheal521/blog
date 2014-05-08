@@ -66,7 +66,9 @@
             {% if FEED_RSS %}
               <li><a class="nodec icon-rss" href="/{{ FEED_RSS }}"></a></li>
             {% endif %}
-			<li><a class="nodec icon-linkedin" href="http://www.linkedin.com/in/pbhealy/"><img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/linkedin-1024-fill1.png" alt="LinkedIn" width="20" height="20"></a>
+			{% if LINKEDIN_ADDRESS %}
+              <li><a class="nodec icon-linkedin" href="/{{ LINKEDIN_ADDRESS }}"></a></li>
+            {% endif %}
           </ul>
         </nav>
       </div> <!-- sitebanner -->

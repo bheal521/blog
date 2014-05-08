@@ -56,3 +56,10 @@
 .icon-rss:before { content: '\e800'; } /* '' */
 .icon-mail-alt:before { content: '\f0e0'; } /* '' */
 .icon-github:before { content: '\f113'; } /* '' */
+.icon-linkedin:before { display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    content: "";
+    background: url("https://raw2.github.com/bheal521/bheal521.github.io/master/images/linkedin-1024-fill1.svg") no-repeat 0 0;
+    background-size: 100%;}
