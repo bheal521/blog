@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Ben Healy'
 SITENAME = u'Ben Healy'
+SITESUBTITLE = "Statistician means never having to say you're certain"
 SITEURL = 'http://bheaal521.github.io'
 
 TIMEZONE = 'America/New_York'
@@ -29,6 +30,7 @@ GITHUB_ADDRESS = 'https://github.com/bheal521'
 TWITTER_ADDRESS = 'https://twitter.com/bheal521'
 LINKEDIN_ADDRESS = 'https://www.linkedin.com/in/pbhealy'
 PROFILE_IMAGE_URL = 'https://raw2.github.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg'
+FEED_RSS = 'blah'
 SHOW_ARTICLE_AUTHOR = False
 LICENSE_URL = 'http://creativecommons.org/licenses/by-sa/4.0/'
 LICENSE_NAME = 'CC BY-SA'
