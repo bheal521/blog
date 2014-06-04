@@ -47,6 +47,10 @@
                 <li{% if p == page %} class="active"{% endif %}><a class="nodec" href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
               {% endfor %}
             {% endif %}
+			<!-- resume on menu items -->
+			{% if RESUME %}
+              <li class="active"><a class="nodec" href="/pages/Resume.pdf">Resume</a></li>
+            {% endif %}
             <!-- services icons -->
             {% if EMAIL_ADDRESS %}
               <li><a class="nodec icon-mail-alt" href="mailto:{{ EMAIL_ADDRESS }}"></a></li>

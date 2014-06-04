@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Ben Healy'
 SITENAME = u'Ben Healy'
-SITESUBTITLE = "Statistician means never having to say you're certain"
+SITESUBTITLE = "Being a statistician means never having to say you're certain"
 SITEURL = 'http://bheaal521.github.io'
 
 TIMEZONE = 'America/New_York'
@@ -25,6 +25,7 @@ LINKS = False
 #SOCIAL = False
 
 # Variables for the crowsfoot theme
+RESUME = "YES"
 EMAIL_ADDRESS = 'peterbenjamin.healy@gmail.com'
 GITHUB_ADDRESS = 'https://github.com/bheal521'
 TWITTER_ADDRESS = 'https://twitter.com/bheal521'
