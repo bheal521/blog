@@ -25,14 +25,14 @@ I headed to Wikipedia to scrape the location of each World Cup, the teams that a
 I threw together a map of each World Cup showing all countries that attended in blue along with the host country in red. Using [GifMaker.me](http://http://gifmaker.me/)
 I stitched the images together to create a single GIF of the history of the World Cup.
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/WV_Years.gif" alt="WC-history" width="100%", height="100%">
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/WC_Years.gif" alt="WC-history" width="100%", height="100%">
 
 In more succinct form, the map below shows all countries that have attended a World Cup and is shaded to indicate the number of World Cups they have been to.
 Brazil, Germany, and Italy are in a league of their own in terms of World Cup pedigree -- each has been to more than fifteen cups (there have only been 19!).
 The most striking thing I took away from the map below was just how minimally the African continent has broken into World Cups. The only country that has 
 consistently qualified is Cameroon, with 7 appearances.
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Worldcup_appearances_Withlegend.png" alt="WC-appearances" width="100%", height="100%">
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Worldcup_Appearances_Withlegend.png" alt="WC-appearances" width="100%", height="100%">
 
 Making it to the World Cup is absolutely an achievement, but those that have won belong to a truly elite group. There are only 8 countries that have won, 
 they are listed in the table below and shown in the subsequent map.
@@ -50,4 +50,4 @@ they are listed in the table below and shown in the subsequent map.
 |England		  | 1			    |
 
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Worldcup_winners.png" alt="WC-appearances" width="100%", height="100%">
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/WorldCup_Winners.png" alt="WC-appearances" width="100%", height="100%">
