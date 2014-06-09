@@ -19,7 +19,7 @@ won a World Cup on South American soil. But I don't have a very good idea of who
 remember that Spain, Italy and Brazil had won the past three. But I struggled to remember that France had won in '98. Though I think I might still own a tee shirt
 with the logo from the 98' World Cup on it... a weird bird of sorts...
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/France98Mascot.png" alt="France98-mascot" width="50%", height="50%">
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/France98mascot.png" alt="France98-mascot" width="50%", height="50%">
 
 I headed to Wikipedia to scrape the location of each World Cup, the teams that attended, and their respective performances. Once I had this information,
 I threw together a map of each World Cup showing all countries that attended in blue along with the host country in red. Using [GifMaker.me](http://http://gifmaker.me/)
