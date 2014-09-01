@@ -20,6 +20,6 @@ page if you'd like to get in touch in some way shape or form!
 
 [NC State's Institute for Advanced Analytics]: http://analytics.ncsu.edu/
 [ASR Analytics]: http://www.asranalytics.com/
-[Billy-Maddison-style]: https://www.youtube.com/watch?v=uMtkiS1SU_c
+[Billy-Madison-style]: https://www.youtube.com/watch?v=uMtkiS1SU_c
 [GitHub]: https://github.com/bheal521
 [Contacts]: http://bheal521.github.io/pages/contact.html
