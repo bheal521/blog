@@ -24,7 +24,7 @@ to find is a woman. In addition to m4w, other post types include m4m, w4m, w4w, 
 on the following six cities: Boston, New York City, Baltimore, Washington DC, Raleigh, and Charlotte. In total I looked at about 4,500 posts. These posts ranged in length from just a handful
 of words, to what seemed like poorly written novellas. Below shows some summary info on the number of posts we collected, the types of posts, gender of posters, and when they posted.
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="300", height="150">
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="800", height="400">
 
 PART I: Sentiment Analysis
 --------------------------------------------	
