@@ -11,18 +11,20 @@ For those unfamiliar with such shenanigans, Missed Connections are a sort of soc
 never exchanged contact information with. I took a stab at estimating the sentiment of posts and then attempted to cluster them to try and get a sense of some of the main themes 
 within the posts. Below is an example post, with all of the available information associated with a Missed Connection:
 
->>Bank Official - m4w - (Reston)
->>Just wanted to say you're stunningly beautiful :) I was at your banking center in Reston. I was in a counter when you walked in and we 
->>looked at each other and said Hi. Wish there was a chance for a longer conversation! (Oct 15th morning and it was raining)	
->>9:51pm October 16, 2014
+>Bank Official - m4w - (Reston)
+>
+>Just wanted to say you're stunningly beautiful :) I was at your banking center in Reston. I was in a counter when you walked in and we 
+>looked at each other and said Hi. Wish there was a chance for a longer conversation! (Oct 15th morning and it was raining)	
+>
+>9:51pm October 16, 2014
 
 In the above example we have the title of the post (Bank Official), the type of post (m4w), the location (Reston), the body of the post, and the date/time that the post was submitted.
-The title and body of the post are just raw text, but the post type (m4w) stands for man-for-woman, meaning a man submitted the post and the person he is interestedin trying 
-to find is a woman. In addition to m4w, other post types inlude m4m, w4m, w4w, etc. I chose to focus my little experiment on the East coast and, in particular 
+The title and body of the post are just raw text, but the post type (m4w) stands for man-for-woman, meaning a man submitted the post and the person he is interested in trying 
+to find is a woman. In addition to m4w, other post types include m4m, w4m, w4w, etc. I chose to focus my little experiment on the East coast and, in particular 
 on the following six cities: Boston, New York City, Baltimore, Washington DC, Raleigh, and Charlotte. In total I looked at about 4,500 posts. These posts ranged in length from just a handful
-of words, to what seemed like poorly written novellas. Below shows some summary info on the number of posts we colleted, the types of posts, gender of posters, and when they posted.
+of words, to what seemed like poorly written novellas. Below shows some summary info on the number of posts we collected, the types of posts, gender of posters, and when they posted.
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="100%", height="100%">
+<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="135%", height="135%">
 
 PART I: Sentiment Analysis
 --------------------------------------------	
