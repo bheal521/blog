@@ -4,7 +4,7 @@ Category: Data Visualization
 Tags: Tableau, Data viz
 Slug: Craigslist-Missed-Connections
 Author: Ben Healy
-Summary: Text Analysis on Craigslist Missed Connections
+Summary: Sentiment and Cluster Analysis
 
 For a recent text analytics project, I took a look in a deep, dark corner of the Internet... at the one and only [Craigslist Missed Connections](https://newyork.craigslist.org/search/mis). 
 For those unfamiliar with such shenanigans, Missed Connections are a sort of social platform for folks that had some sort of encounter with a stranger that they were interested in, but
