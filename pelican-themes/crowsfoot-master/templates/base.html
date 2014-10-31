@@ -70,6 +70,10 @@
             {% if FEED_RSS %}
               <li><a class="nodec icon-rss" href="/{{ FEED_RSS }}"></a></li>
             {% endif %}
+			{% if LINKEDIN_ADDRESS %}
+              <li><a class="nodec icon-linkedin" href="{{ LINKEDIN_ADDRESS }}"></a></li>
+            {% endif %}
+
           </ul>
         </nav>
       </div> <!-- sitebanner -->
