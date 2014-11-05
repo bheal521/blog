@@ -24,7 +24,7 @@ to find is a woman. In addition to m4w, other post types include m4m, w4m, w4w, 
 on the following six cities: Boston, New York City, Baltimore, Washington DC, Raleigh, and Charlotte. In total I looked at about 4,500 posts. These posts ranged in length from just a handful
 of words, to what seemed like poorly written novellas. Below shows some summary info on the number of posts we collected, the types of posts, gender of posters, and when they posted.
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="1000", height="500">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="1000", height="500">
 
 PART I: Sentiment Analysis
 --------------------------------------------	
@@ -73,5 +73,5 @@ they help to explain within the posts. While the topic itself is difficult to ex
 by the amount of variability they explain. In other words, the first axis is the best at separating out posts by type. Below, I've taken the first three axes that result from singular value decomposition
 and plotted the posts that fall within the clusters 1, 3, and 4. You can see how they are really separated! 
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Clist-Missed_Connect_SVD.png" alt="Clist-Missed_Connect_SVD" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Clist-Missed_Connect_SVD.png" alt="Clist-Missed_Connect_SVD" width="100%", height="100%">
 

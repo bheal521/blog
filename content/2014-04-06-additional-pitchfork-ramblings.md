@@ -61,7 +61,7 @@ This is because, by definition, every band that has a review on Pitchfork has a 
 reviewed, and so on. By the time we get out past ten, the only bands for which there are data points are the ones included in the table above. With that in mind,
 take a look:
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/pitchfork_bias.png" alt="Pitchfork-bias" width="100%", height="110%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/pitchfork_bias.png" alt="Pitchfork-bias" width="100%", height="110%">
 
 The dots plotted in black represent all of the album reviews, and the larger blue dots represent the average score given to that album number. For example,
 the average score given to a band's 9th album reviewed on Pitchfork was just shy of 8. While it's hard to be confident in any findings to the right half of 
@@ -74,7 +74,7 @@ While looking at the word count of the various writers at Pitchfork, I began to 
 and shorter for others. The graph below plots all of the bands reviewed by Pitchfork by their average review score versus the average word count for their
 reviews. The line in blue running through the graph is a sample regression model to help visualize the relationship. 
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/pitchfork_scoreVSlength.png" alt="Pitchfork-score-vs-length" width="100%", height="110%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/pitchfork_scoreVSlength.png" alt="Pitchfork-score-vs-length" width="100%", height="110%">
 
 You can see that the bands that are rated the highest definitely seem to get some extra attention. What is most striking, is the cluster of bands hovering
 right around a rating of 7 and a word count of about 600. It seems that Pitchfork likely has a suggested length for its reviews, and that the vast majority

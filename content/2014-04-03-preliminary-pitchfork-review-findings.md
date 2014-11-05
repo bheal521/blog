@@ -68,7 +68,7 @@ Who is that lone individual that has written more than FIVE HUNDRED reviews, you
 I was most interested in the heavy-hitters, those that had written over 100 reviews -- so I subset my results to just them, of which there were 30. Below is a quick summary of those writers and their
 stats. The bars are shaded according to the number of reviews the writer completed,  and the number floating above each bar is the average word count for that particular writer's reviews.
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviewers_BarChart.png" alt="Pitchfork-writers-stats" width="100%", height="110%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Reviewers_BarChart.png" alt="Pitchfork-writers-stats" width="100%", height="110%">
 
 It's interesting to see that most of these writers have an average score somewhere right between 6 and 7, with a handful of exceptions. But nobody has an average below 6, even Ian Cohen --  who is just shy of
 having the lowest average score. He's averaging slightly higher than a 6.2 but Adam Moerder is down at a 6.1. Wouldn't want my upcoming LP on his desk... There also appears to be no relationship
@@ -82,7 +82,7 @@ indicates its frequency in the reviews. There's some debate over whether or not 
 impossible to draw insight from a jumbled bag of word frequencies and that words are only meaningful in context. To that I say -- yeah you're probably right... but I think they look kinda cool 
 and in this particular example they at least show me some of the more common adjectives used by Pitchfork writers to describe music. 
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png" alt="Pitchfork-review-wordcloud" style="margin:auto; width:75%;display:block">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png" alt="Pitchfork-review-wordcloud" style="margin:auto; width:75%;display:block">
 
 So, draw from the above what you will (or don't you h83r). From here, I plan to do some more advanced text analysis looking beyond just word frequencies. For example, I might explore word 
 correlation/association with other words as well as some word clustering to get a better sense of context. I'm reading up a bit on sentiment-analysis as well, so I may try and sift through
@@ -95,7 +95,7 @@ on my [Contact page](http://bheal521.github.io/pages/contact.html)!
 ##*EDIT 4-4-14*##
 I saw earlier today that Ian Cohen got his panties in a bunch when some d00d from Village Voice critiqued his recent [Cloud Nothings review](http://pitchfork.com/reviews/albums/19075-cloud-nothings-here-and-nowhere-else/).
 
-<img src="https://raw2.github.com/bheal521/bheal521.github.io/master/images/cohen_tweet.png" alt="ian_cohen_tweet" style="margin:auto; width:25%;display:block">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/cohen_tweet.png" alt="ian_cohen_tweet" style="margin:auto; width:25%;display:block">
 
 Here's a link to the holier-than-thou piece: [Stop Using Clichés...](http://blogs.villagevoice.com/music/2014/04/music_writing_no_nos.php)
 In the midst of his blowhard-ing Mr Village-Voice goes on a rant about the use of the word "sonic" in music reviews. I went back and took a look at the word cloud above and... low and behold, there 
