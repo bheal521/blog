@@ -4,7 +4,7 @@
 
 <section class="content">
 
-  <ol id="postlist">
+  <ul id="postlist">
 
     {% for article in articles_page.object_list %}
     <li class="post">
@@ -27,7 +27,7 @@
     </li>
     {% endfor %}
 
-  </ol><!-- /#post-list -->
+  </ul><!-- /#post-list -->
 
   {% include 'pagination.html' %}
 
