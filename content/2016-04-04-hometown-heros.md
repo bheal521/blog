@@ -22,13 +22,13 @@ the hometowns of all of the players and plopped them on a map.
 
 So... what's the deal? Here's a map with all of the players from the US that were in the tournament, shaded by their position:
 
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/All-players-map.png" alt="Map-of-all-players" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/All-players-map.png" alt="All-Players-Map.png" width="100%", height="100%">
 
 Lots of players from the urban areas across the US, not very surprising. Maybe a slight concentration of guards in the Northeast
 running through NYC, Philly, and DC -- but overall nothing jumped out at me as being surprising. But this is a map of all of the playersin the 
 tournament, not just the good teams. Maybe better players, defined as players from the top seeded teams, were from particular areas of the country?
 
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/NCAA Player Map - Shaded by tournament Seed.png" alt="Seeded-NCAA-Map" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/seed-map.png" alt="Seeded-NCAA-Map" width="100%", height="100%">
 
 Looks like a group of solid players, or at least players on solid teams, are from the midwest. Wisconsin, Indiana, Illinois, Michigan, don't have very high
 population density but have quite a few players in the tournament this year. The majority of them seem to be from 8 seeds or better.
