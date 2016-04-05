@@ -22,7 +22,7 @@ the hometowns of all of the players and plopped them on a map.
 
 So... what's the deal? Here's a map with all of the players from the US that were in the tournament, shaded by their position:
 
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/All-players-map.png" alt="All-Players-Map.png" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/All-Players-Map.png" alt="All-Players-Map.png" width="100%", height="100%">
 
 Lots of players from the urban areas across the US, not very surprising. Maybe a slight concentration of guards in the Northeast
 running through NYC, Philly, and DC -- but overall nothing jumped out at me as being surprising. But this is a map of all of the playersin the 
