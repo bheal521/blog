@@ -38,7 +38,7 @@ TAGLINE = "Being a statistician means never having to say you're certain"
 Social = SOCIAL = (
       ('github', 'https://github.com/bheal521'),
       ('twitter', 'https://twitter.com/bheal521'),
-	  ('envelope', 'peterbenjamin.healy@gmail.com'),
+	  ('envelope', 'mailto:peterbenjamin.healy@gmail.com?Subject=Howdy'),
 	  ('linkedin-square', 'https://www.linkedin.com/in/pbhealy'),
 	  ('spotify', 'https://play.spotify.com/user/bheal521')
 )
