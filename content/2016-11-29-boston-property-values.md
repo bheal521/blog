@@ -180,7 +180,7 @@ properties.final <- properties.final[properties.final$Dollars_per_SqFt< 1000 & p
 nrow(properties.final)
 hist(properties.final$Dollars_per_SqFt)
 ```
-<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram3.png" alt="properties-histogram3" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram3.png" alt="properties-histogram2" width="100%", height="100%">
 
 
 Now that we're done prepping the data set, take a look at these properties over a map of Boston.
