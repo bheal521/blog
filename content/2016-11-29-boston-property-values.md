@@ -1,6 +1,6 @@
-Title: Botson Property Values
+Title: Boston Property Values
 Date: 2016-11-29
-Category: 
+Category: Open Data, Maps
 Tags: Maps, Open Data
 Slug: Boston-Property-Values
 Author: Ben Healy
