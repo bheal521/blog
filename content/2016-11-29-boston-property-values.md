@@ -63,8 +63,8 @@ A quick [google search](https://www.google.com/search?q=121+nashua+street+boston
 hist(properties$LIVING_AREA, breaks= seq(0, ((max(properties$LIVING_AREA)%/%100)+1)*100, 100))
 hist(properties[properties$LIVING_AREA < 20000, ]$LIVING_AREA, breaks= seq(0, 20000, 100))
 ```
-<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram1.png" alt="properties-histogram1" width="100%", height="100%">
-<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram2.png" alt="properties-histogram2" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram1.PNG" alt="properties-histogram1" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram2.PNG" alt="properties-histogram2" width="100%", height="100%">
 
 
 As would be expected the bulk of properties we have left in the data are between 100 and 5,000 square feet. For simplicity I will trim the data to only include things larger than 250 square feet (assumed to be a data error) and things less than 5,000 square feet. 
@@ -180,7 +180,7 @@ properties.final <- properties.final[properties.final$Dollars_per_SqFt< 1000 & p
 nrow(properties.final)
 hist(properties.final$Dollars_per_SqFt)
 ```
-<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram3.png" alt="properties-histogram2" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram3.PNG" alt="properties-histogram2" width="100%", height="100%">
 
 
 Now that we're done prepping the data set, take a look at these properties over a map of Boston.
