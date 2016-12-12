@@ -63,8 +63,8 @@ A quick [google search](https://www.google.com/search?q=121+nashua+street+boston
 hist(properties$LIVING_AREA, breaks= seq(0, ((max(properties$LIVING_AREA)%/%100)+1)*100, 100))
 hist(properties[properties$LIVING_AREA < 20000, ]$LIVING_AREA, breaks= seq(0, 20000, 100))
 ```
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/blog/master/content/images/properties_histogram1.png" alt="properties-histogram1" width="100%", height="100%">
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/blog/master/content/images/properties_histogram2.png" alt="properties-histogram2" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram1.png" alt="properties-histogram1" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram2.png" alt="properties-histogram2" width="100%", height="100%">
 
 
 As would be expected the bulk of properties we have left in the data are between 100 and 5,000 square feet. For simplicity I will trim the data to only include things larger than 250 square feet (assumed to be a data error) and things less than 5,000 square feet. 
@@ -180,7 +180,7 @@ properties.final <- properties.final[properties.final$Dollars_per_SqFt< 1000 & p
 nrow(properties.final)
 hist(properties.final$Dollars_per_SqFt)
 ```
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/blog/master/content/images/properties_histogram3.png" alt="properties-histogram2" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram3.png" alt="properties-histogram2" width="100%", height="100%">
 
 
 Now that we're done prepping the data set, take a look at these properties over a map of Boston.
@@ -198,7 +198,7 @@ map +
              color = Dollars_per_SqFt), alpha=.15,size=1.2) +
   scale_color_gradientn(colours=rev(brewer.pal(10,"Spectral")))
 ```
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/blog/master/content/images/Boston Property Prices.png" alt="Boston-Property-Prices-Map" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/Boston Property Prices.png" alt="Boston-Property-Prices-Map" width="100%", height="100%">
 
 
 No surprises here, the South End and Back Bay are crazy expensive. Plenty of properties that are close to $1,000 per square foot. The North End also has some high prices, likely due to the tiny apartments that still have pretty significant price tags. What I think is more interesting is the string of more expensive places that seem to follow the Orange line out towards Jamaica Plain. I'm also surprised at how expensive the Allston properties are. 
