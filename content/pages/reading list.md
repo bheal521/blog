@@ -1,5 +1,5 @@
-Title: About
-Date: 2016-08-02 14:35
+Title: Reading List
+Date: 2016-12-18
 Author: Ben Healy
 Slug: reading_list
 
