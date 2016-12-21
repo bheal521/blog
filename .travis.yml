@@ -7,7 +7,7 @@ python:
 install:
 - pip install -r requirements.txt
 script:
-- make html
+- make publish github
 notifications:
   email:
     on_success: always
