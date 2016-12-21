@@ -44,6 +44,13 @@ Social = SOCIAL = (
 )
 
 
+# Page settings
+PAGE_URL = 'pages/{slug}.html'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
+DISPLAY_PAGES_ON_MENU = True
+PAGE_PATHS = ['pages']
+
+
 
 READERS = {"html": None}
 
@@ -53,14 +60,11 @@ FEED_RSS = "Ben's Feed"
 SHOW_ARTICLE_AUTHOR = False
 LICENSE_URL = 'http://creativecommons.org/licenses/by-sa/4.0/'
 LICENSE_NAME = 'CC BY-SA'
-#DISPLAY_PAGES_ON_MENU = True
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
 THEME = "pelican-themes/pure-single"
-
-#DISPLAY_CATEGORIES_ON_MENU = False
 
 OUTPUT_PATH = '../bheal521.github.io'
 
