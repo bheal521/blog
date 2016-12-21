@@ -1,20 +1,3 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Gist
- @bheal521
- Watch 1
-  Star 0
-  Fork 0 jrmontag/blog
- Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
-Branch: master Find file Copy pathblog/Makefile
-5e6e901  on Jan 27
-@jrmontag jrmontag Remove editor open step in makefile
-1 contributor
-RawBlameHistory     
-163 lines (134 sloc)  5.53 KB
 PY=python
 PELICAN=pelican
 PELICANOPTS=
