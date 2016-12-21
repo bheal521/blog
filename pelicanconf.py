@@ -16,15 +16,23 @@ ARTICLE_SAVE_AS = 'posts/{date:%Y}/{slug}/index.html'
 
 YEAR_ARCHIVE_SAVE_AS = 'posts/{date:%Y}/index.html'
 
-RESUME = "YES"
+# Page settings
+PAGE_URL = 'pages/{slug}.html'
+PAGE_SAVE_AS = 'pages/{slug}/index.html'
+DISPLAY_PAGES_ON_MENU = True
+PAGE_PATHS = ['pages']
+
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
+DISPLAY_CATEGORIES_ON_MENU = True
+
 # Blogroll
 LINKS =  ()
+
 
 # from pure readme
 COVER_IMG_URL = 'https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/desk cover image.jpg'
@@ -44,14 +52,6 @@ Social = SOCIAL = (
 )
 
 
-# Page settings
-PAGE_URL = 'pages/{slug}.html'
-PAGE_SAVE_AS = 'pages/{slug}/index.html'
-DISPLAY_PAGES_ON_MENU = True
-PAGE_PATHS = ['pages']
-
-
-
 READERS = {"html": None}
 
 DEFAULT_PAGINATION = 10
@@ -63,8 +63,6 @@ LICENSE_NAME = 'CC BY-SA'
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
-
-THEME = "pelican-themes/pure-single"
 
 OUTPUT_PATH = '../bheal521.github.io'
 

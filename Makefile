@@ -1,29 +1,54 @@
-subPY=python
+Skip to content
+This repository
+Search
+Pull requests
+Issues
+Gist
+ @bheal521
+ Watch 1
+  Star 0
+  Fork 0 jrmontag/blog
+ Code  Issues 0  Pull requests 0  Projects 0  Wiki  Pulse  Graphs
+Branch: master Find file Copy pathblog/Makefile
+5e6e901  on Jan 27
+@jrmontag jrmontag Remove editor open step in makefile
+1 contributor
+RawBlameHistory     
+163 lines (134 sloc)  5.53 KB
+PY=python
 PELICAN=pelican
 PELICANOPTS=
 
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
+PAGESDIR=$(INPUTDIR)/pages
 OUTPUTDIR=$(BASEDIR)/output
 CONFFILE=$(BASEDIR)/pelicanconf.py
 PUBLISHCONF=$(BASEDIR)/publishconf.py
-
-FTP_HOST=localhost
-FTP_USER=anonymous
-FTP_TARGET_DIR=/
 
 SSH_HOST=localhost
 SSH_PORT=22
 SSH_USER=root
 SSH_TARGET_DIR=/var/www
 
-S3_BUCKET=my_s3_bucket
+DROPBOX_PUB_DIR=~/Dropbox/Public/
+# draft post storage
+DROPBOX_PVT_DIR=~/Dropbox/blog/draft/
 
-CLOUDFILES_USERNAME=my_rackspace_username
-CLOUDFILES_API_KEY=my_rackspace_api_key
-CLOUDFILES_CONTAINER=my_cloudfiles_container
+#DATE := $(shell date +'%Y-%m-%d %H:%M:%S')
+DATE := $(shell date +'%Y-%m-%d')
+TIME := $(shell date +'%H:%M:%S')
 
-DROPBOX_DIR=~/Dropbox/Public/
+
+####### save for now
+#FTP_HOST=localhost
+#FTP_USER=anonymous
+#FTP_TARGET_DIR=/
+#S3_BUCKET=my_s3_bucket
+#CLOUDFILES_USERNAME=my_rackspace_username
+#CLOUDFILES_API_KEY=my_rackspace_api_key
+#CLOUDFILES_CONTAINER=my_cloudfiles_container
+#######
 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
@@ -48,15 +73,23 @@ help:
 	@echo '   make s3_upload                   upload the web site via S3         '
 	@echo '   make cf_upload                   upload the web site via Cloud Files'
 	@echo '   make github                      upload the web site via gh-pages   '
+	@echo '   make newpost                     generate template .md for a new    '
+	@echo '                                        post with the given name       '
+	@echo '   make newpage                     generate template .md for a new    '
+	@echo '                                        page with the given name       '
+	@echo '   make savedraft                   copy named post into Dropbox       '
 	@echo '                                                                       '
 	@echo 'Set the DEBUG variable to 1 to enable debugging, e.g. make DEBUG=1 html'
 	@echo '                                                                       '
 
+clean:
+	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+
 html:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
 
-clean:
-	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+publish:
+	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
 
 regenerate:
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
@@ -80,9 +113,6 @@ stopserver:
 	kill -9 `cat srv.pid`
 	@echo 'Stopped Pelican and SimpleHTTPServer processes running in background.'
 
-publish:
-	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS)
-
 ssh_upload: publish
 	scp -P $(SSH_PORT) -r $(OUTPUTDIR)/* $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)
 
@@ -90,7 +120,7 @@ rsync_upload: publish
 	rsync -e "ssh -p $(SSH_PORT)" -P -rvz --delete $(OUTPUTDIR)/ $(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR) --cvs-exclude
 
 dropbox_upload: publish
-	cp -r $(OUTPUTDIR)/* $(DROPBOX_DIR)
+	cp -r $(OUTPUTDIR)/* $(DROPBOX_PUB_DIR)
 
 ftp_upload: publish
 	lftp ftp://$(FTP_USER)@$(FTP_HOST) -e "mirror -R $(OUTPUTDIR) $(FTP_TARGET_DIR) ; quit"
@@ -102,7 +132,50 @@ cf_upload: publish
 	cd $(OUTPUTDIR) && swift -v -A https://auth.api.rackspacecloud.com/v1.0 -U $(CLOUDFILES_USERNAME) -K $(CLOUDFILES_API_KEY) upload -c $(CLOUDFILES_CONTAINER) .
 
 github: publish
-	ghp-import -n $(OUTPUTDIR)
-	@git push -fq https://${GH_TOKEN}@github.com/$(TRAVIS_REPO_SLUG).git gh-pages > /dev/null
+	ghp-import $(OUTPUTDIR)
+	git push origin gh-pages
 
-.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github
+# helper functions
+SLUG := $(shell echo '${NAME}' | sed -e 's/[^[:alnum:]]/-/g' | tr -s '-' | tr A-Z a-z)
+EXT ?= md
+
+newpost:
+ifdef NAME
+	echo "Title: $(NAME)" >  $(INPUTDIR)/$(SLUG).$(EXT)
+	echo "Slug: $(SLUG)" >> $(INPUTDIR)/$(SLUG).$(EXT)
+	echo "Date: $(DATE)" >> $(INPUTDIR)/$(SLUG).$(EXT)
+	echo "Category: " 	 >> $(INPUTDIR)/$(SLUG).$(EXT)
+	echo "Tags: " 		 >> $(INPUTDIR)/$(SLUG).$(EXT)
+	echo "Summary: "	 >> $(INPUTDIR)/$(SLUG).$(EXT)
+	echo ""              >> $(INPUTDIR)/$(SLUG).$(EXT)
+	echo ""              >> $(INPUTDIR)/$(SLUG).$(EXT)
+	#${EDITOR} ${INPUTDIR}/${SLUG}.${EXT} &
+else
+	@echo 'Variable NAME is not defined.'
+	@echo 'Do make newpost NAME='"'"'Post Name'"'"
+endif
+
+newpage:
+ifdef NAME
+	echo "Title: $(NAME)" >  $(PAGESDIR)/$(SLUG).$(EXT)
+	echo "Slug: $(SLUG)" >> $(PAGESDIR)/$(SLUG).$(EXT)
+	echo ""              >> $(PAGESDIR)/$(SLUG).$(EXT)
+	echo ""              >> $(PAGESDIR)/$(SLUG).$(EXT)
+	${EDITOR} ${PAGESDIR}/${SLUG}.$(EXT)
+else
+	@echo 'Variable NAME is not defined.'
+	@echo 'Do make newpage NAME='"'"'Page Name'"'"
+endif
+
+savedraft:
+ifdef FILE 
+	cp -r $(INPUTDIR)/$(FILE) $(DROPBOX_PVT_DIR)
+else
+	@echo 'Variable FILE is not defined.'
+	@echo 'Do make savedraft FILE='"'"'Draft filename'"'"
+endif
+
+
+.PHONY: html help clean regenerate serve devserver publish ssh_upload rsync_upload dropbox_upload ftp_upload s3_upload cf_upload github newpost newpage savedraft
+Contact GitHub API Training Shop Blog About
+© 2016 GitHub, Inc. Terms Privacy Security Status Help
