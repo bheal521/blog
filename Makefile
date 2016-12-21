@@ -32,7 +32,7 @@ TIME := $(shell date +'%H:%M:%S')
 #CLOUDFILES_API_KEY=my_rackspace_api_key
 #CLOUDFILES_CONTAINER=my_cloudfiles_container
 #######
-
+ 
 DEBUG ?= 0
 ifeq ($(DEBUG), 1)
 	PELICANOPTS += -D
