@@ -10,7 +10,7 @@ import sys
 sys.path.append(os.curdir)
 from pelicanconf import *
 
-SITEURL = 'http://bheal521.github.io'
+SITEURL = 'http://pbhealy.com'
 RELATIVE_URLS = True
 #DISPLAY_PAGES_ON_MENU = True
 
