@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ben Healy, Being a statistician means never having to say you're certain">
+
+        <link rel="alternate"  href="http://bheal521.github.io/feeds/all.atom.xml" type="application/atom+xml" title="Ben Healy Full Atom Feed"/>
+        <link rel="alternate" href="http://bheal521.github.io/Ben's Feed" type="application/rss+xml" title="Ben Healy RSS Feed"/>
+
+        <title>Boston Property Values // Ben Healy // Being a statistician means never having to say you're certain</title>
+
+    <link href="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/favicon.ico" rel="icon">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../theme/css/pure.css">
+    <link rel="stylesheet" href="../../../theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background-image: url('https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/desk cover image.jpg')">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg">
+                            <h1 class="brand-main"><a href="../../..">Ben Healy</a></h1>
+                            <p class="tagline">Being a statistician means never having to say you're certain</p>
+                                <p class="social">
+                                    <a href="https://github.com/bheal521">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="https://twitter.com/bheal521">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                    <a href="mailto:peterbenjamin.healy@gmail.com?Subject=Howdy">
+                                        <i class="fa fa-envelope fa-3x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/pbhealy">
+                                        <i class="fa fa-linkedin-square fa-3x"></i>
+                                    </a>
+                                    <a href="https://play.spotify.com/user/bheal521">
+                                        <i class="fa fa-spotify fa-3x"></i>
+                                    </a>
+                                </p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Boston Property Values</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="../../../tag/maps.html">Maps</a>
+                                <a class="post-category" href="../../../tag/open-data.html">Open Data</a>
+                        </p>
+                </header>
+            </section>
+            <p>Boston has recently followed a number of other cities' example in making a number of their data sources available to the public. 
+Data on topics spanning services that the city offers its residents (trash pickup, transportation, etc) to permitting and health is 
+made available on <a href="https://data.cityofboston.gov/">Data Boston</a>.</p>
+<p>The Mrs. and I have been torturing ourselves lately going to open houses around Boston. 
+Most properties we are actually interested in are preposterously out of our price range but realtors have to take you seriously so each Saturday I 
+find myself touring some multi-million dollar condo, snacking on the free food and asking what I'm sure are dumb questions about condo fees, parking availability, 
+and portion of the building that is owner-occupied. </p>
+<p>This self imposed torture had me wondering about publically available housing valuations. 
+So I went and found the <a href="https://data.cityofboston.gov/Permitting/Property-Assessment-2016/i7w8-ure5">property assessment data</a> for 2016 to take a 
+look at the difference in residential property values across the city of Boston.</p>
+<p>Load a few of the packages that we will need to visualize our results and read in the data.</p>
+<div class="highlight"><pre><span></span><span class="kn">library</span><span class="p">(</span>ggmap<span class="p">)</span>
+<span class="kn">library</span><span class="p">(</span>RColorBrewer<span class="p">)</span>
+properties <span class="o">&lt;-</span> read.csv<span class="p">(</span><span class="s">&quot;C:/Users/Ben/Documents/GitHub/Boston Property/Property_Assessment_2016.csv&quot;</span><span class="p">)</span>
+<span class="kp">nrow</span><span class="p">(</span>properties<span class="p">)</span>
+</pre></div>
+
+
+<p>In order to compare the relative values of property in different areas of Boston I want to create a dollars per sq. foot variable. But as is expected there are lots of properties in here that don't have square footage information. Properties in this data also aren't just residential, so I needed to figure out how to discern what was commercial in order to remove it.</p>
+<p>Along with the data set there was a <a href="https://data.cityofboston.gov/api/views/i7w8-ure5/files/b761b235-a98b-42cb-a7af-1f656b5c59f8?download=true&amp;filename=Assessing%20Property%20Data%20Key.pdf">data dictionary</a> provided. The <em>LU</em> ("land use") variable designated the type of property a given record is so I used that to weed out the property types that were oviously not residential.</p>
+<p>I started with nearly 170,000 records, how many have missing square footage data and what are some summary stats about the distribution of non missing suqare footage data?</p>
+<div class="highlight"><pre><span></span><span class="kp">summary</span><span class="p">(</span>properties<span class="o">$</span>LIVING_AREA<span class="p">)</span>
+</pre></div>
+
+
+<p>First I need to get rid of the ~3,500 properties without sq footage info but there are also clearly some outliers in here. The largest property is listed as being 1.94 million square feet. Definitely don't want to include that. After we clean up those things what does the distribution of square footage look like?</p>
+<div class="highlight"><pre><span></span>properties <span class="o">&lt;-</span> properties<span class="p">[</span><span class="o">!</span><span class="kp">is.na</span><span class="p">(</span>properties<span class="o">$</span>LIVING_AREA<span class="p">),</span> <span class="p">]</span>
+
+<span class="c1">#get rid of all non residential properties</span>
+properties <span class="o">&lt;-</span> properties<span class="p">[</span>properties<span class="o">$</span>LU <span class="o">%in%</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;R1&quot;</span><span class="p">,</span> <span class="s">&quot;R2&quot;</span><span class="p">,</span> <span class="s">&quot;R3&quot;</span><span class="p">,</span> <span class="s">&quot;R4&quot;</span><span class="p">,</span> <span class="s">&quot;A&quot;</span><span class="p">,</span> <span class="s">&quot;CD&quot;</span><span class="p">,</span> <span class="s">&quot;CC&quot;</span><span class="p">,</span> <span class="s">&quot;RC&quot;</span><span class="p">),</span> <span class="p">]</span> 
+
+<span class="kp">summary</span><span class="p">(</span>properties<span class="o">$</span>LIVING_AREA<span class="p">)</span>
+<span class="kp">nrow</span><span class="p">(</span>properties<span class="p">)</span>
+</pre></div>
+
+
+<p>Now that records with mising square footage information along with some of the obvious commercial properies have been removed we can see that the first quartile of square footage runs from 0 to 900 square feet and the third quartile runs from ~2,000 square feet to almost 2,500 square feet. That feels about right, though there are still some oddities. We don't want any properties with a listed size of 0 square feet nor do we want something that is 541,000 square feet. What property could that be?</p>
+<div class="highlight"><pre><span></span>properties<span class="p">[</span>properties<span class="o">$</span>LIVING_AREA <span class="o">&gt;=</span> <span class="m">500000</span><span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;ST_NUM&quot;</span><span class="p">,</span> <span class="s">&quot;ST_NAME&quot;</span><span class="p">,</span> <span class="s">&quot;ST_NAME_SUF&quot;</span><span class="p">,</span> <span class="s">&quot;UNIT_NUM&quot;</span><span class="p">,</span> <span class="s">&quot;ZIPCODE&quot;</span><span class="p">,</span> <span class="s">&quot;LU&quot;</span><span class="p">)]</span>
+</pre></div>
+
+
+<p>A quick <a href="https://www.google.com/search?q=121+nashua+street+boston+ma&amp;oq=121+nashua+street+&amp;aqs=chrome.0.0l2j69i57.2513j0j7&amp;sourceid=chrome&amp;ie=UTF-8">google search</a> of what that property is reveals that we're looking at the parking deck for the TD Garden... The weird thing is that it is listed as a land use of <em>A</em> which stands for: "Residential 7 or more units". If we look at the histogram of square footage we find the follwing:</p>
+<div class="highlight"><pre><span></span>hist<span class="p">(</span>properties<span class="o">$</span>LIVING_AREA<span class="p">,</span> breaks<span class="o">=</span> <span class="kp">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="p">((</span><span class="kp">max</span><span class="p">(</span>properties<span class="o">$</span>LIVING_AREA<span class="p">)</span><span class="o">%/%</span><span class="m">100</span><span class="p">)</span><span class="m">+1</span><span class="p">)</span><span class="o">*</span><span class="m">100</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span>
+hist<span class="p">(</span>properties<span class="p">[</span>properties<span class="o">$</span>LIVING_AREA <span class="o">&lt;</span> <span class="m">20000</span><span class="p">,</span> <span class="p">]</span><span class="o">$</span>LIVING_AREA<span class="p">,</span> breaks<span class="o">=</span> <span class="kp">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">20000</span><span class="p">,</span> <span class="m">100</span><span class="p">))</span>
+</pre></div>
+
+
+<p><img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram1.PNG" alt="properties-histogram1" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram2.PNG" alt="properties-histogram2" width="100%", height="100%"></p>
+<p>As would be expected the bulk of properties we have left in the data are between 100 and 5,000 square feet. For simplicity I will trim the data to only include things larger than 250 square feet (assumed to be a data error) and things less than 5,000 square feet. </p>
+<div class="highlight"><pre><span></span><span class="kp">nrow</span><span class="p">(</span>properties<span class="p">)</span>
+properties <span class="o">&lt;-</span> properties<span class="p">[</span>properties<span class="o">$</span>LIVING_AREA <span class="o">&gt;</span> <span class="m">250</span> <span class="o">&amp;</span> properties<span class="o">$</span>LIVING_AREA <span class="o">&lt;=</span> <span class="m">5000</span><span class="p">,</span> <span class="p">]</span>
+<span class="kp">nrow</span><span class="p">(</span>properties<span class="p">)</span>
+</pre></div>
+
+
+<p>After cleaning out those oddly sized properties I only lost about ~5,000 records and now have a total of 124,000 (down from my original set of nearly 170k). In order to visualize these on a map I need the latitude and longitude values in the data to be accurate as well. Are there any with missing latitude or longitude values? The data read these values in as factors so first I need to convert them to numeric.</p>
+<div class="highlight"><pre><span></span>properties<span class="o">$</span>LONGITUDE2 <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">as.character</span><span class="p">(</span>properties<span class="o">$</span>LONGITUDE<span class="p">))</span>
+properties<span class="o">$</span>LATITUDE2 <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">as.character</span><span class="p">(</span>properties<span class="o">$</span>LATITUDE<span class="p">))</span>
+
+<span class="kp">summary</span><span class="p">(</span>properties<span class="o">$</span>LONGITUDE2<span class="p">)</span>
+<span class="kp">summary</span><span class="p">(</span>properties<span class="o">$</span>LATITUDE2<span class="p">)</span>
+</pre></div>
+
+
+<p>Converting these values to numeric turned almost half of the records values into NA's. Look at a few examples of where this happened to see if I did something wrong.</p>
+<div class="highlight"><pre><span></span><span class="kp">head</span><span class="p">(</span>properties<span class="p">[</span><span class="kp">is.na</span><span class="p">(</span>properties<span class="o">$</span>LONGITUDE2<span class="p">),</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;LATITUDE&quot;</span><span class="p">,</span> <span class="s">&quot;LONGITUDE&quot;</span><span class="p">,</span> <span class="s">&quot;LATITUDE2&quot;</span><span class="p">,</span> <span class="s">&quot;LONGITUDE2&quot;</span><span class="p">)])</span>
+</pre></div>
+
+
+<p>Bummer, looks like a ton of the properties have missing lat/lon values. Double check that this is actually what happened throughout the other records.</p>
+<div class="highlight"><pre><span></span><span class="kp">nrow</span><span class="p">(</span>properties<span class="p">[</span>properties<span class="o">$</span>LATITUDE<span class="o">==</span><span class="s">&quot;#N/A&quot;</span><span class="p">,</span> <span class="p">])</span>
+<span class="kp">nrow</span><span class="p">(</span>properties<span class="p">[</span>properties<span class="o">$</span>LONGITUDE<span class="o">==</span><span class="s">&quot;#N/A&quot;</span><span class="p">,</span> <span class="p">])</span>
+</pre></div>
+
+
+<p>Confirmed that this is what happened. Maybe I can generate the lat/lon values on these properties using their street addresses. Try the first record with and #NA in the lat and lon values. Does it have a valid street address?</p>
+<div class="highlight"><pre><span></span><span class="kp">head</span><span class="p">(</span>properties<span class="p">[</span>properties<span class="o">$</span>LATITUDE <span class="o">==</span> <span class="s">&quot;#N/A&quot;</span><span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;ST_NUM&quot;</span><span class="p">,</span> <span class="s">&quot;ST_NAME&quot;</span><span class="p">,</span> <span class="s">&quot;ST_NAME_SUF&quot;</span><span class="p">,</span> <span class="s">&quot;UNIT_NUM&quot;</span><span class="p">,</span> <span class="s">&quot;ZIPCODE&quot;</span><span class="p">)])</span>
+</pre></div>
+
+
+<p>There is a limit on the Google geocoding API of 2,500 per day. But it actually look like a lot of this data is the same street address and the various units within a particular building. To maximize the amount of geocoding we can do in a single day I can create a dataframe with just the unique street number and names to batch geocode them.</p>
+<div class="highlight"><pre><span></span>geocode.properties <span class="o">&lt;-</span> <span class="kp">unique</span><span class="p">(</span>properties<span class="p">[</span><span class="kp">is.na</span><span class="p">(</span>properties<span class="o">$</span>LATITUDE2<span class="p">)</span> <span class="o">|</span> <span class="kp">is.na</span><span class="p">(</span>properties<span class="o">$</span>LONGITUDE<span class="p">),</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;ST_NUM&quot;</span><span class="p">,</span> <span class="s">&quot;ST_NAME&quot;</span><span class="p">,</span> <span class="s">&quot;ST_NAME_SUF&quot;</span><span class="p">,</span> <span class="s">&quot;ZIPCODE&quot;</span><span class="p">)])</span>
+<span class="kp">nrow</span><span class="p">(</span>geocode.properties<span class="p">)</span>
+</pre></div>
+
+
+<p>There are only about 12,600 unique street addresses for the ~60k properties with missing lat/lon data. It will still take 5+ days to get all of these addresses geocoded, but that's better than the month it would have taken otherwise! For today I will geocode the top 2,500 properties based on the number of units they have. Basically, if I can get a buildings lat/lon that has 50 units I'd rather do that than a building with 2 units. At least to start.</p>
+<div class="highlight"><pre><span></span><span class="kn">require</span><span class="p">(</span>sqldf<span class="p">)</span>
+geocode.properties <span class="o">&lt;-</span> sqldf<span class="p">(</span><span class="s">&quot;select ST_NUM, ST_NAME, ST_NAME_SUF, ZIPCODE, count(*) as Freq</span>
+<span class="s">                            from properties where LATITUDE = &#39;#N/A&#39; group by ST_NUM, ST_NAME, ST_NAME_SUF, ZIPCODE&quot;</span><span class="p">)</span>
+geocode.properties <span class="o">&lt;-</span> geocode.properties<span class="p">[</span><span class="kp">order</span><span class="p">(</span>geocode.properties<span class="o">$</span>Freq<span class="p">,</span> decreasing <span class="o">=</span> <span class="kc">TRUE</span><span class="p">),</span> <span class="p">]</span>
+geocode.properties<span class="o">$</span>number <span class="o">&lt;-</span> <span class="m">1</span><span class="o">:</span><span class="kp">nrow</span><span class="p">(</span>geocode.properties<span class="p">)</span>
+</pre></div>
+
+
+<p>Now that the properties are in the right order, go through the top 2,500 and have them geocoded.</p>
+<div class="highlight"><pre><span></span>geocode.properties<span class="o">$</span>Lat <span class="o">&lt;-</span> <span class="kc">NA</span>
+geocode.properties<span class="o">$</span>Lon <span class="o">&lt;-</span> <span class="kc">NA</span>
+
+<span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="kt">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">500</span><span class="p">)){</span>
+  temp <span class="o">&lt;-</span> geocode<span class="p">(</span><span class="kp">paste0</span><span class="p">(</span><span class="kp">as.character</span><span class="p">(</span>geocode.properties<span class="p">[</span>geocode.properties<span class="o">$</span>number <span class="o">==</span>i<span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;ST_NUM&quot;</span><span class="p">)]),</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="kp">as.character</span><span class="p">(</span>geocode.properties<span class="p">[</span>geocode.properties<span class="o">$</span>number <span class="o">==</span>i<span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;ST_NAME&quot;</span><span class="p">)]),</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="kp">as.character</span><span class="p">(</span>geocode.properties<span class="p">[</span>geocode.properties<span class="o">$</span>number <span class="o">==</span>i<span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;ST_NAME_SUF&quot;</span><span class="p">)]),</span> <span class="s">&quot;, Boston, MA&quot;</span><span class="p">),</span> messaging <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+
+  geocode.properties<span class="p">[</span>geocode.properties<span class="o">$</span>number<span class="o">==</span>i<span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Lat&quot;</span><span class="p">)]</span><span class="o">&lt;-</span> temp<span class="o">$</span>lat
+  geocode.properties<span class="p">[</span>geocode.properties<span class="o">$</span>number<span class="o">==</span>i<span class="p">,</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;Lon&quot;</span><span class="p">)]</span><span class="o">&lt;-</span> temp<span class="o">$</span>lon
+<span class="p">}</span>
+</pre></div>
+
+
+<p>Now that We have at least some of the missing lat/lon values that should be in this data -- merge it back to the original data source. First split out the original data into that with lat/lon data and that without. Add the new lat/lon data that we have then concatenate the two dataframes back together. Finally we need to create the dollars per square footage metric so that we can compare properties.</p>
+<div class="highlight"><pre><span></span>with.geo <span class="o">&lt;-</span> properties<span class="p">[</span><span class="o">!</span><span class="p">(</span>properties<span class="o">$</span>LATITUDE <span class="o">==</span> <span class="s">&quot;#N/A&quot;</span><span class="o">|</span> properties<span class="o">$</span>LONGITUDE <span class="o">==</span> <span class="s">&quot;#N/A&quot;</span><span class="p">),</span> <span class="p">]</span>
+without.geo <span class="o">&lt;-</span> properties<span class="p">[(</span>properties<span class="o">$</span>LATITUDE <span class="o">==</span> <span class="s">&quot;#N/A&quot;</span> <span class="o">|</span> properties<span class="o">$</span>LONGITUDE <span class="o">==</span> <span class="s">&quot;#N/A&quot;</span><span class="p">),</span> <span class="p">]</span>
+
+without.geo <span class="o">&lt;-</span> sqldf<span class="p">(</span><span class="s">&quot;select a.*, b.Lat, b.Lon from `without.geo`as a left join `geocode.properties` as b on a.ST_NUM= b.ST_NUM and a.ST_NAME=b.ST_NAME and a.ST_NAME_SUF= b.ST_NAME_SUF and a.ZIPCODE=b.ZIPCODE&quot;</span><span class="p">)</span>
+
+without.geo<span class="o">$</span>Lat <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">as.character</span><span class="p">(</span>without.geo<span class="o">$</span>Lat<span class="p">))</span>
+without.geo<span class="o">$</span>Lon <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">as.character</span><span class="p">(</span>without.geo<span class="o">$</span>Lon<span class="p">))</span>
+
+without.geo<span class="o">$</span>LATITUDE2 <span class="o">&lt;-</span> without.geo<span class="o">$</span>Lat
+without.geo<span class="o">$</span>LONGITUDE2 <span class="o">&lt;-</span> without.geo<span class="o">$</span>Lon
+
+without.geo<span class="o">$</span>Lat <span class="o">&lt;-</span> <span class="kc">NULL</span>
+without.geo<span class="o">$</span>Lon <span class="o">&lt;-</span> <span class="kc">NULL</span>
+
+properties.final <span class="o">&lt;-</span> <span class="kp">rbind.data.frame</span><span class="p">(</span>with.geo<span class="p">,</span> without.geo<span class="p">)</span>
+</pre></div>
+
+
+<p>Finally take a look at the dollar values that are provided for the properties in this dataset.</p>
+<div class="highlight"><pre><span></span><span class="kp">summary</span><span class="p">(</span>properties.final<span class="o">$</span>AV_TOTAL<span class="p">)</span>
+</pre></div>
+
+
+<p>There are only a few outrageously valued properties and after googling some it looks like a handful are actual penthouses while others are entire building values. To make things quick and easy I'm going to remove any properties that have a value of more than $7.5M and anything less than $100k.</p>
+<div class="highlight"><pre><span></span>properties.final <span class="o">&lt;-</span> properties.final<span class="p">[</span>properties.final<span class="o">$</span>AV_TOTAL<span class="o">&gt;=</span> <span class="m">100000</span> <span class="o">&amp;</span> properties.final<span class="o">$</span>AV_TOTAL<span class="o">&lt;=</span> <span class="m">7500000</span><span class="p">,</span> <span class="p">]</span>
+properties.final<span class="o">$</span>Dollars_per_SqFt <span class="o">&lt;-</span> properties.final<span class="o">$</span>AV_TOTAL<span class="o">/</span>properties.final<span class="o">$</span>LIVING_AREA
+</pre></div>
+
+
+<p>There are still some properties with wild dollars per sq. foot valuations. I'm talking more than $50k per sq foot. Quickly going to cut out properties that are valued more than $1,000 per sq foot.</p>
+<div class="highlight"><pre><span></span>properties.final <span class="o">&lt;-</span> properties.final<span class="p">[</span>properties.final<span class="o">$</span>Dollars_per_SqFt<span class="o">&lt;</span> <span class="m">1000</span> <span class="o">&amp;</span> properties.final<span class="o">$</span>Dollars_per_SqFt<span class="o">&gt;=</span><span class="m">100</span><span class="p">,</span> <span class="p">]</span>
+<span class="kp">nrow</span><span class="p">(</span>properties.final<span class="p">)</span>
+hist<span class="p">(</span>properties.final<span class="o">$</span>Dollars_per_SqFt<span class="p">)</span>
+</pre></div>
+
+
+<p><img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/properties_histogram3.PNG" alt="properties-histogram2" width="100%", height="100%"></p>
+<p>Now that we're done prepping the data set, take a look at these properties over a map of Boston.</p>
+<div class="highlight"><pre><span></span>base.map <span class="o">&lt;-</span> ggmap<span class="p">(</span>get_map<span class="p">(</span><span class="s">&#39;Boston, Massachusetts&#39;</span><span class="p">,</span>
+                       zoom<span class="o">=</span><span class="m">12</span><span class="p">,</span>
+                       <span class="kn">source</span><span class="o">=</span><span class="s">&#39;google&#39;</span><span class="p">,</span>
+                       maptype<span class="o">=</span><span class="s">&#39;terrain&#39;</span><span class="p">))</span>
+boston.prop.box <span class="o">&lt;-</span> make_bbox<span class="p">(</span>properties.final<span class="o">$</span>LONGITUDE2<span class="p">,</span> properties.final<span class="o">$</span>LATITUDE2<span class="p">,</span> f <span class="o">=</span> <span class="m">0.01</span><span class="p">)</span>
+map <span class="o">&lt;-</span> ggmap<span class="p">(</span>get_map<span class="p">(</span>boston.prop.box<span class="p">))</span>
+
+map <span class="o">+</span>  
+  geom_jitter<span class="p">(</span>data<span class="o">=</span> properties.final <span class="p">,</span>aes<span class="p">(</span>x<span class="o">=</span>LONGITUDE2<span class="p">,</span> y<span class="o">=</span>LATITUDE2<span class="p">,</span>
+             color <span class="o">=</span> Dollars_per_SqFt<span class="p">),</span> alpha<span class="o">=</span><span class="m">.15</span><span class="p">,</span>size<span class="o">=</span><span class="m">1.2</span><span class="p">)</span> <span class="o">+</span>
+  scale_color_gradientn<span class="p">(</span>colours<span class="o">=</span><span class="kp">rev</span><span class="p">(</span>brewer.pal<span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="s">&quot;Spectral&quot;</span><span class="p">)))</span>
+</pre></div>
+
+
+<p><img src="https://raw.githubusercontent.com/bheal521/blog/master/content/images/Boston Property Prices.png" alt="Boston-Property-Prices-Map" width="100%", height="100%"></p>
+<p>No surprises here, the South End and Back Bay are crazy expensive. Plenty of properties that are close to $1,000 per square foot. The North End also has some high prices, likely due to the tiny apartments that still have pretty significant price tags. What I think is more interesting is the string of more expensive places that seem to follow the Orange line out towards Jamaica Plain. I'm also surprised at how expensive the Allston properties are. </p>
+<p>Dorchester and East Boston are the neighborhoods where you can get the most for your money but what is clear is that while the value of property has been on the rise in many Boston neighborhoods and surrounding areas (Cambridge and Somerville) -- these neighborhoods are somehow not seeing those benefits.</p>
+<p>If you're interested in the code itself, I've pushed the R notebook to my github here: <a href="https://github.com/bheal521/Boston-Property-Open-Data">Boston Properties R Notebook</a></p>
+            <a href="#" class="go-top">Go Top</a>
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "bheal521"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+<footer class="footer">
+    <p>&copy; Ben Healy &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-49434230-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+
+</body>
+</html>

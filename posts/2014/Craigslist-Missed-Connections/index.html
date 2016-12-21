@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ben Healy, Being a statistician means never having to say you're certain">
+
+        <link rel="alternate"  href="http://bheal521.github.io/feeds/all.atom.xml" type="application/atom+xml" title="Ben Healy Full Atom Feed"/>
+        <link rel="alternate" href="http://bheal521.github.io/Ben's Feed" type="application/rss+xml" title="Ben Healy RSS Feed"/>
+
+        <title>Text Analysis of Craigslist Missed Connections // Ben Healy // Being a statistician means never having to say you're certain</title>
+
+    <link href="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/favicon.ico" rel="icon">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../theme/css/pure.css">
+    <link rel="stylesheet" href="../../../theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background-image: url('https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/desk cover image.jpg')">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg">
+                            <h1 class="brand-main"><a href="../../..">Ben Healy</a></h1>
+                            <p class="tagline">Being a statistician means never having to say you're certain</p>
+                                <p class="social">
+                                    <a href="https://github.com/bheal521">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="https://twitter.com/bheal521">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                    <a href="mailto:peterbenjamin.healy@gmail.com?Subject=Howdy">
+                                        <i class="fa fa-envelope fa-3x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/pbhealy">
+                                        <i class="fa fa-linkedin-square fa-3x"></i>
+                                    </a>
+                                    <a href="https://play.spotify.com/user/bheal521">
+                                        <i class="fa fa-spotify fa-3x"></i>
+                                    </a>
+                                </p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Text Analysis of Craigslist Missed Connections</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="../../../tag/tableau.html">Tableau</a>
+                                <a class="post-category" href="../../../tag/data-viz.html">Data viz</a>
+                        </p>
+                </header>
+            </section>
+            <p>For a recent text analytics project, I took a look in a deep, dark corner of the Internet... at the one and only <a href="https://newyork.craigslist.org/search/mis">Craigslist Missed Connections</a>. 
+For those unfamiliar with such shenanigans, Missed Connections are a sort of social platform for folks that had some sort of encounter with a stranger that they were interested in, but
+never exchanged contact information with. I took a stab at estimating the sentiment of posts and then attempted to cluster them to try and get a sense of some of the main themes 
+within the posts. Below is an example post, with all of the available information associated with a Missed Connection:</p>
+<blockquote>
+<p>Bank Official - m4w - (Reston)</p>
+<p>Just wanted to say you're stunningly beautiful :) I was at your banking center in Reston. I was in a counter when you walked in and we 
+looked at each other and said Hi. Wish there was a chance for a longer conversation! (Oct 15th morning and it was raining) </p>
+<p>9:51pm October 16, 2014</p>
+</blockquote>
+<p>In the above example we have the title of the post (Bank Official), the type of post (m4w), the location (Reston), the body of the post, and the date/time that the post was submitted.
+The title and body of the post are just raw text, but the post type (m4w) stands for man-for-woman, meaning a man submitted the post and the person he is interested in trying 
+to find is a woman. In addition to m4w, other post types include m4m, w4m, w4w, etc. I chose to focus my little experiment on the East coast and, in particular 
+on the following six cities: Boston, New York City, Baltimore, Washington DC, Raleigh, and Charlotte. In total I looked at about 4,500 posts. These posts ranged in length from just a handful
+of words, to what seemed like poorly written novellas. Below shows some summary info on the number of posts we collected, the types of posts, gender of posters, and when they posted.</p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="1000", height="500"></p>
+<h2>PART I: Sentiment Analysis</h2>
+<p>Using the ANEW Python package I was able to estimate the sentiment of the missed connections on a 2 different scales: arousal and valence. While use of the term 'arousal' might lead you
+to believe that I looked at how sexually explicit these texts were, arousal in this sense is focused on the level of excitement within a post. The valence score was used to show
+how pleased a body of text was. So, for example if a post had a high valence score and a high arousal score, this could be translated to an emotion such as ecstatic. On the other side
+of the scales, low valence and low arousal could be more in the ballpark of depressed.</p>
+<p>Below you can check out the scores of the posts with some options to filter some of the data. Blue dots are posts written by men, green are written by women. The size of the posts is
+the "total variance" of the post. The way the ANEW package scores sentiment, is to individually score words within a post. There are obvious drawbacks to this, most obviously, the fact that
+a lot of context is lost when looking only at individual words... but it's better than nothing. So the "total variance" of a post is just the sum of the variance in word-scores on the arousal scales
+and the variance of the word scores for valence scale. It was an attempt to find posts that might have been average in valence and/or arousal, but had high variability, indicating they contained
+a couple of words that were very extreme. Unfortunately, it became clear quickly that the sentiment of these posts is just very similar. I tried slicing by location of the post, 
+gender of the poster, gender of the person being posted about, time of day the post was written, etc... and I couldn't see significant differences in the sentiment of these posts. And
+there went my theory that late night posts would be sad and depressing while daytime posts would be more optimistic and happy. Such is life.</p>
+<p>Below the sentiment scores of posts are the most frequently used words within posts (relative frequency indicated by the size of the bubble), with their associated sentiment scores. Hopefully 
+this gives you an idea of what words are in the ANEW dictionary that were scored to create the overall sentiment scores for posts.</p>
+<script type='text/javascript' src='https://public.tableausoftware.com/javascripts/api/viz_v1.js'></script>
+
+<div class='tableauPlaceholder' style='width: 924px; height: 629px;'><noscript><a href='#'><img alt='Clusters ' src='https:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;Cr&#47;CraigslistMissedConnections&#47;Clusters&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz' width='924' height='629' style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableausoftware.com%2F' /> <param name='site_root' value='' /><param name='name' value='CraigslistMissedConnections&#47;Clusters' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableausoftware.com&#47;static&#47;images&#47;Cr&#47;CraigslistMissedConnections&#47;Clusters&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>
+
+<div style='width:924px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;'><div style='float:right; padding-right:8px;'><a href='http://www.tableausoftware.com/public/about-tableau-products?ref=https://public.tableausoftware.com/views/CraigslistMissedConnections/Clusters' target='_blank'>Learn About Tableau</a></div></div>
+
+<h2>PART 2: Cluster Analysis</h2>
+<p>While sentiment analysis turned out to be mostly futile, I did experience some success in clustering posts. Using SAS Enterprise Miner, I was able to come up with the 
+following six clusters:</p>
+<table>
+<thead>
+<tr>
+<th align="right">Cluster</th>
+<th align="left">Descriptive Terms</th>
+<th align="left">% of Posts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Cluster #1</td>
+<td align="left">Shirt, short, smile, train, wear, black, blue, brown, hair, white, color, beautiful</td>
+<td align="left">20%</td>
+</tr>
+<tr>
+<td align="right">Cluster #2</td>
+<td align="left">Parking lot, car, drive, park, driving, gas, kind, color, turn, leave, white</td>
+<td align="left">5%</td>
+</tr>
+<tr>
+<td align="right">Cluster #3</td>
+<td align="left">Day, feel, good, happy, heart, life, love, miss, thing, want, always, year</td>
+<td align="left">20%</td>
+</tr>
+<tr>
+<td align="right">Cluster #4</td>
+<td align="left">Chat, hear, hope, meet, number, shot, talk, friend, long, night, know, chance</td>
+<td align="left">30%</td>
+</tr>
+<tr>
+<td align="right">Cluster #5</td>
+<td align="left">Interest, nice, guy, afternoon, check, hit, hot, white, today, look, great</td>
+<td align="left">9%</td>
+</tr>
+<tr>
+<td align="right">Cluster #6</td>
+<td align="left">Make eye, eye, hit, hot, time, contact few, couple, man, sexy, today, work</td>
+<td align="left">16%</td>
+</tr>
+</tbody>
+</table>
+<p>The three clusters with the largest percentage of the posts within my sample set are clusters 1, 3 and 4. I think these are pretty good representations of some of the topics that In
+saw anecdotally when manually looking through some of these posts. The first cluster is about physical description -- the colors appearing in the important terms are likely hair or eye color,
+words like "smile", "beautiful", and "wear" speak for themselves. The third cluster is clearly an emotionally focused topic. The words are largely centered on the emotions felt by the poster,
+presumably when they encountered this stranger they now are hoping to connect with. Finally, the fourth cluster appears to be focused on the communication aspect of these posts. Many of these
+posts deal with situations where individuals had a chance to talk to each other, but failed to get contact information before parting ways. Words like "chat", "talk", "chance", are indicators
+that the posts are describing these encounters where communication did occur.</p>
+<p>Clusters are calculated using <a href="http://en.wikipedia.org/wiki/Singular_value_decomposition">singular value decomposition</a>, a process that essentially looks at terms and even combinations of words in order to virtually plot each post on a multi-dimensional
+set of axes that, when combined, represent all of the words found across all of the posts in the data set. The key, is that these axes are created in order, in order of the amount of variability
+they help to explain within the posts. While the topic itself is difficult to explain, the important aspect is that these created axes with which posts are now plotted on are created in order
+by the amount of variability they explain. In other words, the first axis is the best at separating out posts by type. Below, I've taken the first three axes that result from singular value decomposition
+and plotted the posts that fall within the clusters 1, 3, and 4. You can see how they are really separated! </p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Clist-Missed_Connect_SVD.png" alt="Clist-Missed_Connect_SVD" width="100%", height="100%"></p>
+            <a href="#" class="go-top">Go Top</a>
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "bheal521"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+<footer class="footer">
+    <p>&copy; Ben Healy &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-49434230-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+
+</body>
+</html>

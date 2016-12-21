@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Healy - Projects</title><link href="http://bheal521.github.io/" rel="alternate"></link><link href="http://bheal521.github.io/feeds/projects.atom.xml" rel="self"></link><id>http://bheal521.github.io/</id><updated>2014-06-03T00:00:00-04:00</updated><entry><title>World Cup</title><link href="http://bheal521.github.io/posts/2014/History-of-the-World-Cup/" rel="alternate"></link><published>2014-06-03T00:00:00-04:00</published><updated>2014-06-03T00:00:00-04:00</updated><author><name>Ben Healy</name></author><id>tag:bheal521.github.io,2014-06-03:/posts/2014/History-of-the-World-Cup/</id><summary type="html">&lt;p&gt;Who has made it to the world cup? Who has won?&lt;/p&gt;</summary><content type="html">&lt;p&gt;With the World Cup almost a week away, I've been reading up on the teams headed to Brazil and trying to stay positive 
+about the chances that the US have of making it out of the group stage. While there is no shortage of coverage on all of the
+major teams and players, I enjoyed Professor Stephen Hawking's &lt;a href="http://blog.paddypower.com/wp-content/uploads/2014/05/hawking-report_WC2014.pdf"&gt;World Cup Study&lt;/a&gt;
+that looks at the conditions that best suit England in a World Cup match. What it lacks in quantitative rigor, it more than makes up for in
+playfulness. Hawking looks at a number of factors and their correlation to England's success on the pitch, including: distance from home, game-day temperature,
+time of kick-off, color of jersey worn, nationality of the ref, and the team's formation. According to him, England plan to employ a 4-3-3 formation and are
+crossing their fingers for a European ref and a 3pm kick-off time.&lt;/p&gt;
+&lt;p&gt;As I've prepared myself to watch endless hours of this World Cup, I started wondering about past cups. Analysts keep mentioning that no European team has
+won a World Cup on South American soil. But I don't have a very good idea of who has won in general. I remember watching the past couple... going backwards I could
+remember that Spain, Italy and Brazil had won the past three. But I struggled to remember that France had won in '98. Though I think I might still own a tee shirt
+with the logo from the 98' World Cup on it... a weird bird of sorts...&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/France98mascot.png" alt="France98-mascot" width="50%", height="50%"&gt;&lt;/p&gt;
+&lt;p&gt;I headed to Wikipedia to scrape the location of each World Cup, the teams that attended, and their respective performances. Once I had this information,
+I threw together a map of each World Cup showing all countries that attended in blue along with the host country in red. Using &lt;a href="http://http://gifmaker.me/"&gt;GifMaker.me&lt;/a&gt;
+I stitched the images together to create a single GIF of the history of the World Cup.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/WC_Years.gif" alt="WC-history" width="100%", height="100%"&gt;&lt;/p&gt;
+&lt;p&gt;In more succinct form, the map below shows all countries that have attended a World Cup and is shaded to indicate the number of World Cups they have been to.
+Brazil, Germany, and Italy are in a league of their own in terms of World Cup pedigree -- each has been to more than fifteen cups (there have only been 19!).
+The most striking thing I took away from the map below was just how minimally the African continent has broken into World Cups. The only country that has 
+consistently qualified is Cameroon, with 7 appearances.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Worldcup_Appearances_Withlegend.png" alt="WC-appearances" width="100%", height="100%"&gt;&lt;/p&gt;
+&lt;p&gt;Making it to the World Cup is absolutely an achievement, but those that have won belong to a truly elite group. There are only 8 countries that have won, 
+they are listed in the table below and shown in the subsequent map.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="right"&gt;Country&lt;/th&gt;
+&lt;th align="left"&gt;# World Cup Wins&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Brazil&lt;/td&gt;
+&lt;td align="left"&gt;5&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Italy&lt;/td&gt;
+&lt;td align="left"&gt;4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Germany&lt;/td&gt;
+&lt;td align="left"&gt;3&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Argentina&lt;/td&gt;
+&lt;td align="left"&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Uruguay&lt;/td&gt;
+&lt;td align="left"&gt;2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Spain&lt;/td&gt;
+&lt;td align="left"&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;France&lt;/td&gt;
+&lt;td align="left"&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;England&lt;/td&gt;
+&lt;td align="left"&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/WorldCup_Winners.png" alt="WC-appearances" width="100%", height="100%"&gt;&lt;/p&gt;</content><category term="R"></category><category term="soccer"></category><category term="world cup"></category></entry><entry><title>Continued Analysis of Pitchfork Reviews</title><link href="http://bheal521.github.io/posts/2014/Continued-Analysis-of-Pitchfork-Reviews/" rel="alternate"></link><published>2014-04-06T00:00:00-04:00</published><updated>2014-04-06T00:00:00-04:00</updated><author><name>Ben Healy</name></author><id>tag:bheal521.github.io,2014-04-06:/posts/2014/Continued-Analysis-of-Pitchfork-Reviews/</id><summary type="html">&lt;p&gt;Does Pitchfork penalize bands that aren't new?&lt;/p&gt;</summary><content type="html">&lt;p&gt;The last few days I've looked over a lot of great information on natural language processing and sentiment analysis. There are plenty of really great examples 
+of how this has been done. Many of the &lt;a href="http://www.sjwhitworth.com/sentiment-analysis-in-python-using-nltk/"&gt;examples&lt;/a&gt; I found dealt with classifying tweets 
+as negative or positive. But this same classification of text and machine learning is how something like spam-email works. Ultimately, what I'd like to do is build 
+a model that learns to predict the score given to a Pitchfork review by analyzing its text. I've started working on it, but think that it's going to take some 
+serious effort to figure out how to best train the model on the ~10,000 reviews I have in my database in order to look at new reviews and correctly classify 
+the score.&lt;/p&gt;
+&lt;p&gt;But before really diving into some more serious natural language processing and machine learning, I thought I'd look for an answer to a question I've had 
+about Pitchfork for a while. That is, if a band that has been reviewed by Pitchfork before comes out with additional albums, are those albums penalized in score
+for not being new enough? For example, there is a band called &lt;a href="http://pitchfork.com/artists/28390-sleigh-bells/"&gt;Sleigh Bells&lt;/a&gt; that have had three of their
+albums reviewed by Pitchfork. Their first album, &lt;a href="http://pitchfork.com/reviews/albums/14251-treats/"&gt;Treats&lt;/a&gt;, was released in 2010 and brought this new 
+&lt;em&gt;BIG&lt;/em&gt; sound that was described by the reviewer as music that,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;just seemed bigger than it had before, 
+like it took up more space and hit&lt;br&gt;
+with more force and went further than 
+once seemed possible.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;The writer reviewed the album very favorably and awarded it an 8.7, enough to get it on the &lt;a href="http://pitchfork.com/reviews/best/albums/"&gt;Best New Music&lt;/a&gt; portion of the website, which I'm sure
+ had lots of benefits in terms of gaining new listeners. I know that is where I first saw them. But Sleigh Bells released two more albums in the three years that
+ followed and received an 8.2 and then a 5.9. Now, just because a band created a great album does not mean that all albums after it will also be great. I realize
+ this and also understand that the reviewing of music is about as subjective as it gets... But I believe that a band that creates a first album worthy of a 
+ high Pitchfork rating is more likely to do so again in future work. In this specific example, I don't even disagree on the order in which
+ the albums are ranked. As a Sleigh Bells fan, I think they got progressively worse. But I have a tough time rationalizing a drop from 8.2 on their 
+ &lt;a href="http://pitchfork.com/reviews/albums/16297-reign-of-terror/"&gt;second album&lt;/a&gt; to a 5.9 on their 
+ &lt;a href="http://pitchfork.com/reviews/albums/18594-sleigh-bells-bitter-rivals/"&gt;third&lt;/a&gt;. The big change over this three year period was Sleigh Bell's steady 
+ climb into main steam music. My hypothesis was that Pitchfork penalizes bands with abnormally low scores after their initial releases due to the fact those
+ bands become known and &lt;em&gt;so0o0o mainstream bro&lt;/em&gt;.&lt;/p&gt;
+&lt;p&gt;To test my hypothesis, I first looked at the bands that had been reviewed the most on Pitchfork. Why, you ask? Well -- it doesn't really provide any useful
+information in answering my question but I was sorta wondering... and it's my blog post so I'll do what I want! The table below has the bands that have
+had at least 10 albums reviewed by Pitchfork along with their average score and average word length of the reviews written on them.&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="right"&gt;Artist&lt;/th&gt;
+&lt;th align="left"&gt;# Albums Reviewed&lt;/th&gt;
+&lt;th align="left"&gt;Average Score&lt;/th&gt;
+&lt;th align="left"&gt;Average Review Word Count&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Animal Collective&lt;/td&gt;
+&lt;td align="left"&gt;10&lt;/td&gt;
+&lt;td align="left"&gt;7.9&lt;/td&gt;
+&lt;td align="left"&gt;769&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Guided By Voices&lt;/td&gt;
+&lt;td align="left"&gt;10&lt;/td&gt;
+&lt;td align="left"&gt;6.8&lt;/td&gt;
+&lt;td align="left"&gt;836&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Lil Wayne&lt;/td&gt;
+&lt;td align="left"&gt;10&lt;/td&gt;
+&lt;td align="left"&gt;6.6&lt;/td&gt;
+&lt;td align="left"&gt;807&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Mogwai&lt;/td&gt;
+&lt;td align="left"&gt;10&lt;/td&gt;
+&lt;td align="left"&gt;6.9&lt;/td&gt;
+&lt;td align="left"&gt;670&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;R.E.M.&lt;/td&gt;
+&lt;td align="left"&gt;11&lt;/td&gt;
+&lt;td align="left"&gt;8.2&lt;/td&gt;
+&lt;td align="left"&gt;883&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Xiu Xiu&lt;/td&gt;
+&lt;td align="left"&gt;11&lt;/td&gt;
+&lt;td align="left"&gt;7.1&lt;/td&gt;
+&lt;td align="left"&gt;709&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Four Tet&lt;/td&gt;
+&lt;td align="left"&gt;12&lt;/td&gt;
+&lt;td align="left"&gt;7.5&lt;/td&gt;
+&lt;td align="left"&gt;748&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Robert Pollard&lt;/td&gt;
+&lt;td align="left"&gt;15&lt;/td&gt;
+&lt;td align="left"&gt;5.9&lt;/td&gt;
+&lt;td align="left"&gt;615&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;The Beatles&lt;/td&gt;
+&lt;td align="left"&gt;19&lt;/td&gt;
+&lt;td align="left"&gt;9.1&lt;/td&gt;
+&lt;td align="left"&gt;978&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Xiu Xiu was definitely a surprise for me, I didn't realize they had so much music out... Also, remember that this is just the most recent 10,000 music reviews
+on the site so it is entirely possible that some of these bands have additional albums that were reviewed very early on in Pitchfork's history that I did not
+scrape. It is clear that R.E.M. is given lots of respect, but nobody touches The Beatles, cuz duh.&lt;/p&gt;
+&lt;p&gt;But back to my question. In order to see whether or not bands got progressively worse scores the more albums they came out with, I plotted albums by their
+release number (a band's n&lt;em&gt;th&lt;/em&gt; album) and the score it received. As is expected, the number of data points drops off as you get to higher numbered album releases.
+This is because, by definition, every band that has a review on Pitchfork has a first album, but fewer have a second album. Even fewer have a third album that was
+reviewed, and so on. By the time we get out past ten, the only bands for which there are data points are the ones included in the table above. With that in mind,
+take a look:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/pitchfork_bias.png" alt="Pitchfork-bias" width="100%", height="110%"&gt;&lt;/p&gt;
+&lt;p&gt;The dots plotted in black represent all of the album reviews, and the larger blue dots represent the average score given to that album number. For example,
+the average score given to a band's 9th album reviewed on Pitchfork was just shy of 8. While it's hard to be confident in any findings to the right half of 
+the graph, it's interesting to see that the average score is actually increasing slightly as we go from a band's first album, to their second, all the 
+way through their 6th. Looks like I was wrong. &lt;/p&gt;
+&lt;h2&gt;Does Pitchfork Give More Words to Higher Rated Bands?&lt;/h2&gt;
+&lt;p&gt;While looking at the word count of the various writers at Pitchfork, I began to wonder if Pitchfork reviews were longer for bands they rated highly
+and shorter for others. The graph below plots all of the bands reviewed by Pitchfork by their average review score versus the average word count for their
+reviews. The line in blue running through the graph is a sample regression model to help visualize the relationship. &lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/pitchfork_scoreVSlength.png" alt="Pitchfork-score-vs-length" width="100%", height="110%"&gt;&lt;/p&gt;
+&lt;p&gt;You can see that the bands that are rated the highest definitely seem to get some extra attention. What is most striking, is the cluster of bands hovering
+right around a rating of 7 and a word count of about 600. It seems that Pitchfork likely has a suggested length for its reviews, and that the vast majority
+of bands are getting scores near 7. This could be for a number of reasons, but I'd imagine that what might seem like a high average for scores is because only
+albums and bands that are pre-screened to some extent get selected for a review. Pitchfork isn't just reviewing every album they can get their hands on.&lt;/p&gt;
+&lt;p&gt;See something interesting here? Any questions or suggestions on further exploration of this data? All feedback is welcome below in the comments, or feel free to 
+get in touch with me using the method of your preference on my &lt;a href="http://bheal521.github.io/pages/contact.html"&gt;contacts page&lt;/a&gt;.&lt;/p&gt;</content><category term="R"></category><category term="music"></category><category term="Pitchfork"></category></entry><entry><title>Preliminary Pitchfork Review Text Analysis</title><link href="http://bheal521.github.io/posts/2014/Preliminary-Pitchfork-Review-Text-Analysis/" rel="alternate"></link><published>2014-04-03T00:00:00-04:00</published><updated>2014-04-03T00:00:00-04:00</updated><author><name>Ben Healy</name></author><id>tag:bheal521.github.io,2014-04-03:/posts/2014/Preliminary-Pitchfork-Review-Text-Analysis/</id><summary type="html">&lt;p&gt;Scraping Pitchfork music reviews and taking a closer look at the reviewers that shape my musical preferences.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Everyone likes to think that they listen to the &lt;strong&gt;best&lt;/strong&gt; music. If you're a bit of a music snob, you not only think that your music taste is the best, but that it's unique and eclectic -- not something
+that someone who listens to only the Top 40 would understand. I absolutely fall under this category; I can sometimes even convince myself that my general preferences aren't curated for me by 
+&lt;a href="http://pitchfork.com"&gt;Pitchfork&lt;/a&gt;. But in reality, the reviews, ratings and general opinion of this site have had a huge influence on my musical preferences and, in using the site
+as my musical gospel, I ensure that my "unique" taste in music is shared by the masses (just slightly smaller masses than those that listen only to radio hits). So, with all of my angsty appreciation 
+of this site in mind, I thought it would be interesting to take a closer look at the reviews and reviewers that have helped shape my &lt;em&gt;melodic proclivities&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Web Scraping&lt;/h2&gt;
+&lt;p&gt;Using Python and a package called &lt;a href="http://www.crummy.com/software/BeautifulSoup/"&gt;BeautifulSoup&lt;/a&gt;, I created a program that scraped the most recent 10,000 reviews published on Pitchfork. 
+I created a &lt;a href="http://www.mysql.com/"&gt;MySQL&lt;/a&gt; database that stored the text of each review along with some other general information (band, album, record label, reviewer, date...). I then used R
+to query the database for analysis. &lt;/p&gt;
+&lt;p&gt;The following Python code shows how BeautifulSoup reads in a web page, turns it into &lt;em&gt;soup&lt;/em&gt;, and then searches through the HTML tags until it gets to the node of interest. I've found using the Chrome
+browser's developer tools is an awesome way to sift through a site's source HTML to figure out where the information you're interested in scraping lives.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;#this package is also needed to read in the website and grab the HTML&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;urllib2&lt;/span&gt; 
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bs4&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;
+&lt;span class="n"&gt;baseurl&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;http://pitchfork.com/reviews/albums/19075-cloud-nothings-here-and-nowhere-else/&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;page&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;urllib2&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;urlopen&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;baseurl&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;soup&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BeautifulSoup&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="c1"&gt;## Extract the meta-data for the album&lt;/span&gt;
+&lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;ul&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;ul&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;class&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;review-meta&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}):&lt;/span&gt;
+    &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt; &lt;span class="ow"&gt;in&lt;/span&gt; &lt;span class="n"&gt;ul&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;div&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;class&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;info&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;}):&lt;/span&gt;
+        &lt;span class="n"&gt;artist&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;h1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;album&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;h2&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;score&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;findAll&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;span&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;label&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;h3&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;rev_date&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;h4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+        &lt;span class="n"&gt;reviewer&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;div&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;h4&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;split&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;;&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()[&lt;/span&gt;&lt;span class="mi"&gt;3&lt;/span&gt;&lt;span class="p"&gt;:]&lt;/span&gt;
+
+&lt;span class="c1"&gt;#Extract the body of the review&lt;/span&gt;
+&lt;span class="n"&gt;editorial&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;soup&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;find&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;div&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;class&amp;quot;&lt;/span&gt; &lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;editorial&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;})&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;ascii&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;ignore&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;strip&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For those interested in web scraping, I'd suggest Python and BeautifulSoup -- I've been using it for a little while now and have found it to be very straightforward. But there are other, well-loved
+packages around, most notably &lt;a href="http://scrapy.org/"&gt;Scrapy&lt;/a&gt;. Coincidentally, there is a more point-and-click-friendly approach built on Scrapy that was just released. It's called &lt;a href="http://blog.scrapinghub.com/2014/04/01/announcing-portia/"&gt;Portia &lt;/a&gt;,
+and it is still in development but you can check them out on GitHub. It appears to be great for people with limited coding skills and for simple, well-structured sites.&lt;/p&gt;
+&lt;h2&gt;Initial Results&lt;/h2&gt;
+&lt;p&gt;So, what did I find?&lt;/p&gt;
+&lt;p&gt;There were about 170 different writers that published at least one of the most recent 10,000 reviews on Pitchfork. But many had written one, or just a couple of reviews. Twenty-five writers
+had published just one review and sixty-six writers had published ten or fewer reviews. The table below shows the general breakdown of how many writers wrote how many reviews:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="right"&gt;# of Reviews&lt;/th&gt;
+&lt;th align="left"&gt;# of Writers&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;1&lt;/td&gt;
+&lt;td align="left"&gt;25&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;2-5&lt;/td&gt;
+&lt;td align="left"&gt;27&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;6-10&lt;/td&gt;
+&lt;td align="left"&gt;14&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;11-25&lt;/td&gt;
+&lt;td align="left"&gt;28&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;26-50&lt;/td&gt;
+&lt;td align="left"&gt;26&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;51-100&lt;/td&gt;
+&lt;td align="left"&gt;19&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;101-250&lt;/td&gt;
+&lt;td align="left"&gt;22&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;250-500&lt;/td&gt;
+&lt;td align="left"&gt;7&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;500+&lt;/td&gt;
+&lt;td align="left"&gt;1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Who is that lone individual that has written more than FIVE HUNDRED reviews, you ask? Well, if you are familiar with Pitchfork it will come as no surprise that it is the one and only &lt;a href="http://pitchfork.com/staff/ian-cohen/"&gt;Ian Cohen&lt;/a&gt;. 
+I was most interested in the heavy-hitters, those that had written over 100 reviews -- so I subset my results to just them, of which there were 30. Below is a quick summary of those writers and their
+stats. The bars are shaded according to the number of reviews the writer completed,  and the number floating above each bar is the average word count for that particular writer's reviews.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Reviewers_BarChart.png" alt="Pitchfork-writers-stats" width="100%", height="110%"&gt;&lt;/p&gt;
+&lt;p&gt;It's interesting to see that most of these writers have an average score somewhere right between 6 and 7, with a handful of exceptions. But nobody has an average below 6, even Ian Cohen --  who is just shy of
+having the lowest average score. He's averaging slightly higher than a 6.2 but Adam Moerder is down at a 6.1. Wouldn't want my upcoming LP on his desk... There also appears to be no relationship
+between a writer's average score given to an album and their average review length. Nor is there any relationship between the number of reviews a writer has done and the length of those reviews. But for a surprisingly tight 
+range around the average scores given by these writers, the length of their reviews varies pretty significantly. The shortest average review length is just over 450 words while the longest is
+up over 850 words. Towards the lengthy side, we find Mr. Ian Cohen -- writing an average of over 750 words per review.&lt;/p&gt;
+&lt;p&gt;Next I took a look at the actual content of these reviews. Using R's text mining and word cloud packages, I did some very minimal clean-up of the text and created a word cloud showing some of
+the terms that were used most frequently. Again, this was done using only the reviews of these "heavy hitters" -- writers with more than 100 reviews under their belt. The relative size of the word
+indicates its frequency in the reviews. There's some debate over whether or not word clouds are useful. The &lt;a href="http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/"&gt;h83rs&lt;/a&gt; say that it's essentially 
+impossible to draw insight from a jumbled bag of word frequencies and that words are only meaningful in context. To that I say -- yeah you're probably right... but I think they look kinda cool 
+and in this particular example they at least show me some of the more common adjectives used by Pitchfork writers to describe music. &lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png" alt="Pitchfork-review-wordcloud" style="margin:auto; width:75%;display:block"&gt;&lt;/p&gt;
+&lt;p&gt;So, draw from the above what you will (or don't you h83r). From here, I plan to do some more advanced text analysis looking beyond just word frequencies. For example, I might explore word 
+correlation/association with other words as well as some word clustering to get a better sense of context. I'm reading up a bit on sentiment-analysis as well, so I may try and sift through
+each writers reviews to score their sentiment and see how that relates to their scoring of an album. But that is likely to be tough... the sarcasm-meter is high in some of the reviews 
+which increases the difficulty when training a model to deal with that appropriately. But stay tuned!&lt;/p&gt;
+&lt;p&gt;Do you have any comments on what I've found so far? Ideas for how to take it further? Leave a comment below or get in touch with me in some form or another 
+on my &lt;a href="http://bheal521.github.io/pages/contact.html"&gt;Contact page&lt;/a&gt;!&lt;/p&gt;
+&lt;h2&gt;&lt;em&gt;EDIT 4-4-14&lt;/em&gt;&lt;/h2&gt;
+&lt;p&gt;I saw earlier today that Ian Cohen got his panties in a bunch when some d00d from Village Voice critiqued his recent &lt;a href="http://pitchfork.com/reviews/albums/19075-cloud-nothings-here-and-nowhere-else/"&gt;Cloud Nothings review&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/cohen_tweet.png" alt="ian_cohen_tweet" style="margin:auto; width:25%;display:block"&gt;&lt;/p&gt;
+&lt;p&gt;Here's a link to the holier-than-thou piece: &lt;a href="http://blogs.villagevoice.com/music/2014/04/music_writing_no_nos.php"&gt;Stop Using Clichés...&lt;/a&gt;
+In the midst of his blowhard-ing Mr Village-Voice goes on a rant about the use of the word "sonic" in music reviews. I went back and took a look at the word cloud above and... low and behold, there 
+it is sitting right above the &lt;strong&gt;L&lt;/strong&gt; in 'album' (album is in red near the center of the image). Remember, this wordcloud is from the reviews of the 30 writers who have written the most in the 
+past couple years not just Ian Cohen, but still -- kinda funny.&lt;/p&gt;</content><category term="python"></category><category term="R"></category><category term="text analysis"></category></entry></feed>

@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ben Healy, Being a statistician means never having to say you're certain">
+
+        <link rel="alternate"  href="http://bheal521.github.io/feeds/all.atom.xml" type="application/atom+xml" title="Ben Healy Full Atom Feed"/>
+        <link rel="alternate" href="http://bheal521.github.io/Ben's Feed" type="application/rss+xml" title="Ben Healy RSS Feed"/>
+
+        <title>Preliminary Pitchfork Review Text Analysis // Ben Healy // Being a statistician means never having to say you're certain</title>
+
+    <link href="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/favicon.ico" rel="icon">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../theme/css/pure.css">
+    <link rel="stylesheet" href="../../../theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background-image: url('https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/desk cover image.jpg')">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg">
+                            <h1 class="brand-main"><a href="../../..">Ben Healy</a></h1>
+                            <p class="tagline">Being a statistician means never having to say you're certain</p>
+                                <p class="social">
+                                    <a href="https://github.com/bheal521">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="https://twitter.com/bheal521">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                    <a href="mailto:peterbenjamin.healy@gmail.com?Subject=Howdy">
+                                        <i class="fa fa-envelope fa-3x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/pbhealy">
+                                        <i class="fa fa-linkedin-square fa-3x"></i>
+                                    </a>
+                                    <a href="https://play.spotify.com/user/bheal521">
+                                        <i class="fa fa-spotify fa-3x"></i>
+                                    </a>
+                                </p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Preliminary Pitchfork Review Text Analysis</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="../../../tag/python.html">python</a>
+                                <a class="post-category" href="../../../tag/r.html">R</a>
+                                <a class="post-category" href="../../../tag/text-analysis.html">text analysis</a>
+                        </p>
+                </header>
+            </section>
+            <p>Everyone likes to think that they listen to the <strong>best</strong> music. If you're a bit of a music snob, you not only think that your music taste is the best, but that it's unique and eclectic -- not something
+that someone who listens to only the Top 40 would understand. I absolutely fall under this category; I can sometimes even convince myself that my general preferences aren't curated for me by 
+<a href="http://pitchfork.com">Pitchfork</a>. But in reality, the reviews, ratings and general opinion of this site have had a huge influence on my musical preferences and, in using the site
+as my musical gospel, I ensure that my "unique" taste in music is shared by the masses (just slightly smaller masses than those that listen only to radio hits). So, with all of my angsty appreciation 
+of this site in mind, I thought it would be interesting to take a closer look at the reviews and reviewers that have helped shape my <em>melodic proclivities</em>.</p>
+<h2>Web Scraping</h2>
+<p>Using Python and a package called <a href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a>, I created a program that scraped the most recent 10,000 reviews published on Pitchfork. 
+I created a <a href="http://www.mysql.com/">MySQL</a> database that stored the text of each review along with some other general information (band, album, record label, reviewer, date...). I then used R
+to query the database for analysis. </p>
+<p>The following Python code shows how BeautifulSoup reads in a web page, turns it into <em>soup</em>, and then searches through the HTML tags until it gets to the node of interest. I've found using the Chrome
+browser's developer tools is an awesome way to sift through a site's source HTML to figure out where the information you're interested in scraping lives.</p>
+<div class="highlight"><pre><span></span><span class="c1">#this package is also needed to read in the website and grab the HTML</span>
+<span class="kn">import</span> <span class="nn">urllib2</span> 
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="n">baseurl</span><span class="o">=</span> <span class="s2">&quot;http://pitchfork.com/reviews/albums/19075-cloud-nothings-here-and-nowhere-else/&quot;</span>
+<span class="n">page</span> <span class="o">=</span> <span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">baseurl</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">page</span><span class="p">)</span>
+
+<span class="c1">## Extract the meta-data for the album</span>
+<span class="k">for</span> <span class="n">ul</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="s2">&quot;review-meta&quot;</span><span class="p">}):</span>
+    <span class="k">for</span> <span class="n">div</span> <span class="ow">in</span> <span class="n">ul</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="s2">&quot;info&quot;</span><span class="p">}):</span>
+        <span class="n">artist</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">album</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">score</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">label</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h3&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">rev_date</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h4&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+        <span class="n">reviewer</span> <span class="o">=</span> <span class="n">div</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h4&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;;&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()[</span><span class="mi">3</span><span class="p">:]</span>
+
+<span class="c1">#Extract the body of the review</span>
+<span class="n">editorial</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;class&quot;</span> <span class="p">:</span> <span class="s2">&quot;editorial&quot;</span><span class="p">})</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s2">&quot;ascii&quot;</span><span class="p">,</span> <span class="s2">&quot;ignore&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</pre></div>
+
+
+<p>For those interested in web scraping, I'd suggest Python and BeautifulSoup -- I've been using it for a little while now and have found it to be very straightforward. But there are other, well-loved
+packages around, most notably <a href="http://scrapy.org/">Scrapy</a>. Coincidentally, there is a more point-and-click-friendly approach built on Scrapy that was just released. It's called <a href="http://blog.scrapinghub.com/2014/04/01/announcing-portia/">Portia </a>,
+and it is still in development but you can check them out on GitHub. It appears to be great for people with limited coding skills and for simple, well-structured sites.</p>
+<h2>Initial Results</h2>
+<p>So, what did I find?</p>
+<p>There were about 170 different writers that published at least one of the most recent 10,000 reviews on Pitchfork. But many had written one, or just a couple of reviews. Twenty-five writers
+had published just one review and sixty-six writers had published ten or fewer reviews. The table below shows the general breakdown of how many writers wrote how many reviews:</p>
+<table>
+<thead>
+<tr>
+<th align="right"># of Reviews</th>
+<th align="left"># of Writers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">1</td>
+<td align="left">25</td>
+</tr>
+<tr>
+<td align="right">2-5</td>
+<td align="left">27</td>
+</tr>
+<tr>
+<td align="right">6-10</td>
+<td align="left">14</td>
+</tr>
+<tr>
+<td align="right">11-25</td>
+<td align="left">28</td>
+</tr>
+<tr>
+<td align="right">26-50</td>
+<td align="left">26</td>
+</tr>
+<tr>
+<td align="right">51-100</td>
+<td align="left">19</td>
+</tr>
+<tr>
+<td align="right">101-250</td>
+<td align="left">22</td>
+</tr>
+<tr>
+<td align="right">250-500</td>
+<td align="left">7</td>
+</tr>
+<tr>
+<td align="right">500+</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<p>Who is that lone individual that has written more than FIVE HUNDRED reviews, you ask? Well, if you are familiar with Pitchfork it will come as no surprise that it is the one and only <a href="http://pitchfork.com/staff/ian-cohen/">Ian Cohen</a>. 
+I was most interested in the heavy-hitters, those that had written over 100 reviews -- so I subset my results to just them, of which there were 30. Below is a quick summary of those writers and their
+stats. The bars are shaded according to the number of reviews the writer completed,  and the number floating above each bar is the average word count for that particular writer's reviews.</p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Reviewers_BarChart.png" alt="Pitchfork-writers-stats" width="100%", height="110%"></p>
+<p>It's interesting to see that most of these writers have an average score somewhere right between 6 and 7, with a handful of exceptions. But nobody has an average below 6, even Ian Cohen --  who is just shy of
+having the lowest average score. He's averaging slightly higher than a 6.2 but Adam Moerder is down at a 6.1. Wouldn't want my upcoming LP on his desk... There also appears to be no relationship
+between a writer's average score given to an album and their average review length. Nor is there any relationship between the number of reviews a writer has done and the length of those reviews. But for a surprisingly tight 
+range around the average scores given by these writers, the length of their reviews varies pretty significantly. The shortest average review length is just over 450 words while the longest is
+up over 850 words. Towards the lengthy side, we find Mr. Ian Cohen -- writing an average of over 750 words per review.</p>
+<p>Next I took a look at the actual content of these reviews. Using R's text mining and word cloud packages, I did some very minimal clean-up of the text and created a word cloud showing some of
+the terms that were used most frequently. Again, this was done using only the reviews of these "heavy hitters" -- writers with more than 100 reviews under their belt. The relative size of the word
+indicates its frequency in the reviews. There's some debate over whether or not word clouds are useful. The <a href="http://www.niemanlab.org/2011/10/word-clouds-considered-harmful/">h83rs</a> say that it's essentially 
+impossible to draw insight from a jumbled bag of word frequencies and that words are only meaningful in context. To that I say -- yeah you're probably right... but I think they look kinda cool 
+and in this particular example they at least show me some of the more common adjectives used by Pitchfork writers to describe music. </p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Reviews_WrdCld.png" alt="Pitchfork-review-wordcloud" style="margin:auto; width:75%;display:block"></p>
+<p>So, draw from the above what you will (or don't you h83r). From here, I plan to do some more advanced text analysis looking beyond just word frequencies. For example, I might explore word 
+correlation/association with other words as well as some word clustering to get a better sense of context. I'm reading up a bit on sentiment-analysis as well, so I may try and sift through
+each writers reviews to score their sentiment and see how that relates to their scoring of an album. But that is likely to be tough... the sarcasm-meter is high in some of the reviews 
+which increases the difficulty when training a model to deal with that appropriately. But stay tuned!</p>
+<p>Do you have any comments on what I've found so far? Ideas for how to take it further? Leave a comment below or get in touch with me in some form or another 
+on my <a href="http://bheal521.github.io/pages/contact.html">Contact page</a>!</p>
+<h2><em>EDIT 4-4-14</em></h2>
+<p>I saw earlier today that Ian Cohen got his panties in a bunch when some d00d from Village Voice critiqued his recent <a href="http://pitchfork.com/reviews/albums/19075-cloud-nothings-here-and-nowhere-else/">Cloud Nothings review</a>.</p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/cohen_tweet.png" alt="ian_cohen_tweet" style="margin:auto; width:25%;display:block"></p>
+<p>Here's a link to the holier-than-thou piece: <a href="http://blogs.villagevoice.com/music/2014/04/music_writing_no_nos.php">Stop Using Clichés...</a>
+In the midst of his blowhard-ing Mr Village-Voice goes on a rant about the use of the word "sonic" in music reviews. I went back and took a look at the word cloud above and... low and behold, there 
+it is sitting right above the <strong>L</strong> in 'album' (album is in red near the center of the image). Remember, this wordcloud is from the reviews of the 30 writers who have written the most in the 
+past couple years not just Ian Cohen, but still -- kinda funny.</p>
+            <a href="#" class="go-top">Go Top</a>
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "bheal521"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+<footer class="footer">
+    <p>&copy; Ben Healy &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-49434230-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+
+</body>
+</html>

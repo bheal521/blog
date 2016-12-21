@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Healy - Data Visualization</title><link href="http://bheal521.github.io/" rel="alternate"></link><link href="http://bheal521.github.io/feeds/data-visualization.atom.xml" rel="self"></link><id>http://bheal521.github.io/</id><updated>2016-04-04T00:00:00-04:00</updated><entry><title>Hometown Heros</title><link href="http://bheal521.github.io/posts/2016/Hometown-Heros/" rel="alternate"></link><published>2016-04-04T00:00:00-04:00</published><updated>2016-04-04T00:00:00-04:00</updated><author><name>Ben Healy</name></author><id>tag:bheal521.github.io,2016-04-04:/posts/2016/Hometown-Heros/</id><summary type="html">&lt;p&gt;Where are college bball players from?&lt;/p&gt;</summary><content type="html">&lt;p&gt;After watching too many hours of college basketball the past few weeks I started
+wondering where all these kids were from. And they really are kids -- it's shocking how
+young some of them are even though I look like I could be some of their children.&lt;/p&gt;
+&lt;p&gt;Being somewhat familiar with the recent recruiting strategy for the UMass basketball team,
+I started wondering if all colleges had focus areas for recruiting. Or were most successful
+schools recruiting in their own back yard? Success being the distinction -- UMass hasn't seen much
+of that recently. Or maybe there's a region of the country where all the top talent is coming from?
+Are all of the top schools fighting over the talent being produced in one area?&lt;/p&gt;
+&lt;p&gt;For each of the 68 (64 + play in teams...) that made this year's March Madness tournament, I scraped roster
+data from &lt;a href="http://www.sports-reference.com/cbb/"&gt;Sports Reference&lt;/a&gt;. Then using the ggmaps R package, I geocoded
+the hometowns of all of the players and plopped them on a map.&lt;/p&gt;
+&lt;p&gt;So... what's the deal? Here's a map with all of the players from the US that were in the tournament, shaded by their position:&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/All-Players-Map.png" alt="All-Players-Map.png" width="100%", height="100%"&gt;&lt;/p&gt;
+&lt;p&gt;Lots of players from the urban areas across the US, not very surprising. Maybe a slight concentration of guards in the Northeast
+running through NYC, Philly, and DC -- but overall nothing jumped out at me as being surprising. But this is a map of all of the playersin the 
+tournament, not just the good teams. Maybe better players, defined as players from the top seeded teams, were from particular areas of the country?&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/seed-map.png" alt="Seeded-NCAA-Map" width="100%", height="100%"&gt;&lt;/p&gt;
+&lt;p&gt;Looks like a group of solid players, or at least players on solid teams, are from the midwest. Wisconsin, Indiana, Illinois, Michigan, don't have very high
+population density but have quite a few players in the tournament this year. The majority of them seem to be from 8 seeds or better.&lt;/p&gt;
+&lt;p&gt;Lastly, I started wondering about individual teams and how widely spread their player's hometowns were. You always hear about the kid that's from the school's 
+backyard, grew up a fan, and now is leading them to the Final Four. To get at what I'll call the "Team Spread" metric, I calculated the distance between each possible
+pair of a team's American-born players and took the average. This gives the average distance players grew up from each other.&lt;/p&gt;
+&lt;p&gt;Here are the 68 teams by their average distance between player hometowns....&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;College&lt;/th&gt;
+&lt;th&gt;Team Spread (Miles)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;northern-iowa&lt;/td&gt;
+&lt;td&gt;156&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;villanova&lt;/td&gt;
+&lt;td&gt;173&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;purdue&lt;/td&gt;
+&lt;td&gt;235&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;xavier&lt;/td&gt;
+&lt;td&gt;353&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;middle-tennessee&lt;/td&gt;
+&lt;td&gt;363&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;green-bay&lt;/td&gt;
+&lt;td&gt;363&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;chattanooga&lt;/td&gt;
+&lt;td&gt;365&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;west-virginia&lt;/td&gt;
+&lt;td&gt;397&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;dayton&lt;/td&gt;
+&lt;td&gt;401&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;indiana&lt;/td&gt;
+&lt;td&gt;426&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fairleigh-dickinson&lt;/td&gt;
+&lt;td&gt;430&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;north-carolina&lt;/td&gt;
+&lt;td&gt;454&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;syracuse&lt;/td&gt;
+&lt;td&gt;458&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;holy-cross&lt;/td&gt;
+&lt;td&gt;522&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;butler&lt;/td&gt;
+&lt;td&gt;560&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;michigan-state&lt;/td&gt;
+&lt;td&gt;573&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pittsburgh&lt;/td&gt;
+&lt;td&gt;598&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cincinnati&lt;/td&gt;
+&lt;td&gt;640&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;texas-tech&lt;/td&gt;
+&lt;td&gt;655&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;south-dakota-state&lt;/td&gt;
+&lt;td&gt;667&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;iowa-state&lt;/td&gt;
+&lt;td&gt;691&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;southern&lt;/td&gt;
+&lt;td&gt;712&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;oklahoma&lt;/td&gt;
+&lt;td&gt;715&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;texas&lt;/td&gt;
+&lt;td&gt;727&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;fresno-state&lt;/td&gt;
+&lt;td&gt;762&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;vanderbilt&lt;/td&gt;
+&lt;td&gt;763&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;iowa&lt;/td&gt;
+&lt;td&gt;765&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hampton&lt;/td&gt;
+&lt;td&gt;775&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;texas-am&lt;/td&gt;
+&lt;td&gt;793&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;north-carolina-asheville&lt;/td&gt;
+&lt;td&gt;844&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;wisconsin&lt;/td&gt;
+&lt;td&gt;894&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;north-carolina-wilmington&lt;/td&gt;
+&lt;td&gt;1,006&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;arkansas-little-rock&lt;/td&gt;
+&lt;td&gt;1,112&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;yale&lt;/td&gt;
+&lt;td&gt;1,171&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;virginia-commonwealth&lt;/td&gt;
+&lt;td&gt;1,261&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;iona&lt;/td&gt;
+&lt;td&gt;1,285&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;notre-dame&lt;/td&gt;
+&lt;td&gt;1,319&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;florida-gulf-coast&lt;/td&gt;
+&lt;td&gt;1,337&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;providence&lt;/td&gt;
+&lt;td&gt;1,340&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;buffalo&lt;/td&gt;
+&lt;td&gt;1,350&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;stephen-f-austin&lt;/td&gt;
+&lt;td&gt;1,368&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;connecticut&lt;/td&gt;
+&lt;td&gt;1,387&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;baylor&lt;/td&gt;
+&lt;td&gt;1,416&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;kansas&lt;/td&gt;
+&lt;td&gt;1,449&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;austin-peay&lt;/td&gt;
+&lt;td&gt;1,467&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;weber-state&lt;/td&gt;
+&lt;td&gt;1,510&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;temple&lt;/td&gt;
+&lt;td&gt;1,513&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;stony-brook&lt;/td&gt;
+&lt;td&gt;1,518&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;tulsa&lt;/td&gt;
+&lt;td&gt;1,521&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;michigan&lt;/td&gt;
+&lt;td&gt;1,523&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;miami-fl&lt;/td&gt;
+&lt;td&gt;1,533&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;arizona&lt;/td&gt;
+&lt;td&gt;1,551&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;maryland&lt;/td&gt;
+&lt;td&gt;1,567&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;saint-josephs&lt;/td&gt;
+&lt;td&gt;1,594&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;colorado&lt;/td&gt;
+&lt;td&gt;1,802&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;cal-state-bakersfield&lt;/td&gt;
+&lt;td&gt;1,830&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;wichita-state&lt;/td&gt;
+&lt;td&gt;1,836&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;seton-hall&lt;/td&gt;
+&lt;td&gt;1,838&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;duke&lt;/td&gt;
+&lt;td&gt;1,908&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;utah&lt;/td&gt;
+&lt;td&gt;1,921&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;oregon&lt;/td&gt;
+&lt;td&gt;1,958&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;gonzaga&lt;/td&gt;
+&lt;td&gt;2,067&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;virginia&lt;/td&gt;
+&lt;td&gt;2,174&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;kentucky&lt;/td&gt;
+&lt;td&gt;2,273&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;california&lt;/td&gt;
+&lt;td&gt;2,279&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;southern-california&lt;/td&gt;
+&lt;td&gt;2,426&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;oregon-state&lt;/td&gt;
+&lt;td&gt;2,752&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;hawaii&lt;/td&gt;
+&lt;td&gt;3,704&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;Northern Iowa! Basically each of these kids slept in the bunkbeds above another teammate... But some top teams are right there at the top of the Team Spread list. All of the 
+Final Four teams have a Team Spread of less than 1,000 miles. Villanova is right there in second with a whopping 173 miles. All West Coast teams at the other end of the spectrum, with 
+Hawaii coming logically in last. But pretty nuts they have, on average, an additional 1,000 miles between players' hometowns.  &lt;/p&gt;
+&lt;p&gt;One last set of maps for good measure -- take a look at where the kids are from on the two teams in the finals: 'Nova and UNC (can you tell which is which? ha). If closeness is any indicator of success, I better hurry and 
+get some money on the boys from Philly.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Villanova.png" alt="NCAA-Villanova" width="100%", height="100%"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/North-Carolina.png" alt="NCAA-UNC" width="100%", height="100%"&gt;&lt;/p&gt;</content><category term="R"></category><category term="Data viz"></category></entry><entry><title>Text Analysis of Craigslist Missed Connections</title><link href="http://bheal521.github.io/posts/2014/Craigslist-Missed-Connections/" rel="alternate"></link><published>2014-10-15T00:00:00-04:00</published><updated>2014-10-15T00:00:00-04:00</updated><author><name>Ben Healy</name></author><id>tag:bheal521.github.io,2014-10-15:/posts/2014/Craigslist-Missed-Connections/</id><summary type="html">&lt;p&gt;Sentiment and Cluster Analysis&lt;/p&gt;</summary><content type="html">&lt;p&gt;For a recent text analytics project, I took a look in a deep, dark corner of the Internet... at the one and only &lt;a href="https://newyork.craigslist.org/search/mis"&gt;Craigslist Missed Connections&lt;/a&gt;. 
+For those unfamiliar with such shenanigans, Missed Connections are a sort of social platform for folks that had some sort of encounter with a stranger that they were interested in, but
+never exchanged contact information with. I took a stab at estimating the sentiment of posts and then attempted to cluster them to try and get a sense of some of the main themes 
+within the posts. Below is an example post, with all of the available information associated with a Missed Connection:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Bank Official - m4w - (Reston)&lt;/p&gt;
+&lt;p&gt;Just wanted to say you're stunningly beautiful :) I was at your banking center in Reston. I was in a counter when you walked in and we 
+looked at each other and said Hi. Wish there was a chance for a longer conversation! (Oct 15th morning and it was raining) &lt;/p&gt;
+&lt;p&gt;9:51pm October 16, 2014&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;In the above example we have the title of the post (Bank Official), the type of post (m4w), the location (Reston), the body of the post, and the date/time that the post was submitted.
+The title and body of the post are just raw text, but the post type (m4w) stands for man-for-woman, meaning a man submitted the post and the person he is interested in trying 
+to find is a woman. In addition to m4w, other post types include m4m, w4m, w4w, etc. I chose to focus my little experiment on the East coast and, in particular 
+on the following six cities: Boston, New York City, Baltimore, Washington DC, Raleigh, and Charlotte. In total I looked at about 4,500 posts. These posts ranged in length from just a handful
+of words, to what seemed like poorly written novellas. Below shows some summary info on the number of posts we collected, the types of posts, gender of posters, and when they posted.&lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/CList-Post-Summary.png" alt="CList-Post-Summary" width="1000", height="500"&gt;&lt;/p&gt;
+&lt;h2&gt;PART I: Sentiment Analysis&lt;/h2&gt;
+&lt;p&gt;Using the ANEW Python package I was able to estimate the sentiment of the missed connections on a 2 different scales: arousal and valence. While use of the term 'arousal' might lead you
+to believe that I looked at how sexually explicit these texts were, arousal in this sense is focused on the level of excitement within a post. The valence score was used to show
+how pleased a body of text was. So, for example if a post had a high valence score and a high arousal score, this could be translated to an emotion such as ecstatic. On the other side
+of the scales, low valence and low arousal could be more in the ballpark of depressed.&lt;/p&gt;
+&lt;p&gt;Below you can check out the scores of the posts with some options to filter some of the data. Blue dots are posts written by men, green are written by women. The size of the posts is
+the "total variance" of the post. The way the ANEW package scores sentiment, is to individually score words within a post. There are obvious drawbacks to this, most obviously, the fact that
+a lot of context is lost when looking only at individual words... but it's better than nothing. So the "total variance" of a post is just the sum of the variance in word-scores on the arousal scales
+and the variance of the word scores for valence scale. It was an attempt to find posts that might have been average in valence and/or arousal, but had high variability, indicating they contained
+a couple of words that were very extreme. Unfortunately, it became clear quickly that the sentiment of these posts is just very similar. I tried slicing by location of the post, 
+gender of the poster, gender of the person being posted about, time of day the post was written, etc... and I couldn't see significant differences in the sentiment of these posts. And
+there went my theory that late night posts would be sad and depressing while daytime posts would be more optimistic and happy. Such is life.&lt;/p&gt;
+&lt;p&gt;Below the sentiment scores of posts are the most frequently used words within posts (relative frequency indicated by the size of the bubble), with their associated sentiment scores. Hopefully 
+this gives you an idea of what words are in the ANEW dictionary that were scored to create the overall sentiment scores for posts.&lt;/p&gt;
+&lt;script type='text/javascript' src='https://public.tableausoftware.com/javascripts/api/viz_v1.js'&gt;&lt;/script&gt;
+
+&lt;div class='tableauPlaceholder' style='width: 924px; height: 629px;'&gt;&lt;noscript&gt;&lt;a href='#'&gt;&lt;img alt='Clusters ' src='https:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;Cr&amp;#47;CraigslistMissedConnections&amp;#47;Clusters&amp;#47;1_rss.png' style='border: none' /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class='tableauViz' width='924' height='629' style='display:none;'&gt;&lt;param name='host_url' value='https%3A%2F%2Fpublic.tableausoftware.com%2F' /&gt; &lt;param name='site_root' value='' /&gt;&lt;param name='name' value='CraigslistMissedConnections&amp;#47;Clusters' /&gt;&lt;param name='tabs' value='no' /&gt;&lt;param name='toolbar' value='yes' /&gt;&lt;param name='static_image' value='https:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;Cr&amp;#47;CraigslistMissedConnections&amp;#47;Clusters&amp;#47;1.png' /&gt; &lt;param name='animate_transition' value='yes' /&gt;&lt;param name='display_static_image' value='yes' /&gt;&lt;param name='display_spinner' value='yes' /&gt;&lt;param name='display_overlay' value='yes' /&gt;&lt;param name='display_count' value='yes' /&gt;&lt;/object&gt;&lt;/div&gt;
+
+&lt;div style='width:924px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;'&gt;&lt;div style='float:right; padding-right:8px;'&gt;&lt;a href='http://www.tableausoftware.com/public/about-tableau-products?ref=https://public.tableausoftware.com/views/CraigslistMissedConnections/Clusters' target='_blank'&gt;Learn About Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2&gt;PART 2: Cluster Analysis&lt;/h2&gt;
+&lt;p&gt;While sentiment analysis turned out to be mostly futile, I did experience some success in clustering posts. Using SAS Enterprise Miner, I was able to come up with the 
+following six clusters:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th align="right"&gt;Cluster&lt;/th&gt;
+&lt;th align="left"&gt;Descriptive Terms&lt;/th&gt;
+&lt;th align="left"&gt;% of Posts&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Cluster #1&lt;/td&gt;
+&lt;td align="left"&gt;Shirt, short, smile, train, wear, black, blue, brown, hair, white, color, beautiful&lt;/td&gt;
+&lt;td align="left"&gt;20%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Cluster #2&lt;/td&gt;
+&lt;td align="left"&gt;Parking lot, car, drive, park, driving, gas, kind, color, turn, leave, white&lt;/td&gt;
+&lt;td align="left"&gt;5%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Cluster #3&lt;/td&gt;
+&lt;td align="left"&gt;Day, feel, good, happy, heart, life, love, miss, thing, want, always, year&lt;/td&gt;
+&lt;td align="left"&gt;20%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Cluster #4&lt;/td&gt;
+&lt;td align="left"&gt;Chat, hear, hope, meet, number, shot, talk, friend, long, night, know, chance&lt;/td&gt;
+&lt;td align="left"&gt;30%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Cluster #5&lt;/td&gt;
+&lt;td align="left"&gt;Interest, nice, guy, afternoon, check, hit, hot, white, today, look, great&lt;/td&gt;
+&lt;td align="left"&gt;9%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td align="right"&gt;Cluster #6&lt;/td&gt;
+&lt;td align="left"&gt;Make eye, eye, hit, hot, time, contact few, couple, man, sexy, today, work&lt;/td&gt;
+&lt;td align="left"&gt;16%&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;The three clusters with the largest percentage of the posts within my sample set are clusters 1, 3 and 4. I think these are pretty good representations of some of the topics that In
+saw anecdotally when manually looking through some of these posts. The first cluster is about physical description -- the colors appearing in the important terms are likely hair or eye color,
+words like "smile", "beautiful", and "wear" speak for themselves. The third cluster is clearly an emotionally focused topic. The words are largely centered on the emotions felt by the poster,
+presumably when they encountered this stranger they now are hoping to connect with. Finally, the fourth cluster appears to be focused on the communication aspect of these posts. Many of these
+posts deal with situations where individuals had a chance to talk to each other, but failed to get contact information before parting ways. Words like "chat", "talk", "chance", are indicators
+that the posts are describing these encounters where communication did occur.&lt;/p&gt;
+&lt;p&gt;Clusters are calculated using &lt;a href="http://en.wikipedia.org/wiki/Singular_value_decomposition"&gt;singular value decomposition&lt;/a&gt;, a process that essentially looks at terms and even combinations of words in order to virtually plot each post on a multi-dimensional
+set of axes that, when combined, represent all of the words found across all of the posts in the data set. The key, is that these axes are created in order, in order of the amount of variability
+they help to explain within the posts. While the topic itself is difficult to explain, the important aspect is that these created axes with which posts are now plotted on are created in order
+by the amount of variability they explain. In other words, the first axis is the best at separating out posts by type. Below, I've taken the first three axes that result from singular value decomposition
+and plotted the posts that fall within the clusters 1, 3, and 4. You can see how they are really separated! &lt;/p&gt;
+&lt;p&gt;&lt;img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Clist-Missed_Connect_SVD.png" alt="Clist-Missed_Connect_SVD" width="100%", height="100%"&gt;&lt;/p&gt;</content><category term="Tableau"></category><category term="Data viz"></category></entry><entry><title>Tableau</title><link href="http://bheal521.github.io/posts/2014/Tableau-Trials/" rel="alternate"></link><published>2014-09-01T00:00:00-04:00</published><updated>2014-09-01T00:00:00-04:00</updated><author><name>Ben Healy</name></author><id>tag:bheal521.github.io,2014-09-01:/posts/2014/Tableau-Trials/</id><summary type="html">&lt;p&gt;Trials and Tribulations in Tableau&lt;/p&gt;</summary><content type="html">&lt;p&gt;It's been a while since I've put something up here... sorry to the 3 people that have ever visited the site for the wait! 
+Several months have flown by largely due to the fact that I am back at school! One of the new toys I've had a chance to play 
+with since being back in the classroom is Tableau, a well known data-visualization tool that is pretty powerful while still being 
+very accessible to less-technical folks. There is no programming necessary to make it go, just point and click.&lt;/p&gt;
+&lt;p&gt;Currently I only have access to Tableau Public, a free-for-students version of the software that only allows you to save your work to the web, 
+nothing can be saved locally. But with that limitation, you get access to a whole host of different public data including geographic and demographic
+data from the US Census. Additionally, with Tableau you can easily add some user-interaction to your visualizations and, with the public version, these
+interactions are carried over to the web. So without having to tinker around with any JavaScript libraries, boom, you've got a fun web tool.&lt;/p&gt;
+&lt;p&gt;Using some of the freely available data in my version of Tableau, I created the visualization below that takes a look at the adult obesity rates in the United
+States. Selecting a state on the right hand panel should zoom the graphic into that state and give you some more specific, corresponding information for that state in the 
+scatter plots below the map. Let me know what you think below, have you ever used Tableau public? Anything cool I should know?&lt;/p&gt;
+&lt;script type='text/javascript' src='https://public.tableausoftware.com/javascripts/api/viz_v1.js'&gt;&lt;/script&gt;
+
+&lt;div class='tableauPlaceholder' style='width: 804px; height: 669px;'&gt;&lt;noscript&gt;&lt;a href='#'&gt;&lt;img alt='Dashboard 1 ' src='https:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;Ad&amp;#47;AdultObesityintheUnitedStates&amp;#47;Dashboard1&amp;#47;1_rss.png' style='border: none' /&gt;&lt;/a&gt;&lt;/noscript&gt;&lt;object class='tableauViz' width='804' height='669' style='display:none;'&gt;&lt;param name='host_url' value='https%3A%2F%2Fpublic.tableausoftware.com%2F' /&gt; &lt;param name='site_root' value='' /&gt;&lt;param name='name' value='AdultObesityintheUnitedStates&amp;#47;Dashboard1' /&gt;&lt;param name='tabs' value='no' /&gt;&lt;param name='toolbar' value='yes' /&gt;&lt;param name='static_image' value='https:&amp;#47;&amp;#47;public.tableausoftware.com&amp;#47;static&amp;#47;images&amp;#47;Ad&amp;#47;AdultObesityintheUnitedStates&amp;#47;Dashboard1&amp;#47;1.png' /&gt; &lt;param name='animate_transition' value='yes' /&gt;&lt;param name='display_static_image' value='yes' /&gt;&lt;param name='display_spinner' value='yes' /&gt;&lt;param name='display_overlay' value='yes' /&gt;&lt;param name='display_count' value='yes' /&gt;&lt;/object&gt;&lt;/div&gt;
+
+&lt;div style='width:804px;height:22px;padding:0px 10px 0px 0px;color:black;font:normal 8pt verdana,helvetica,arial,sans-serif;'&gt;&lt;div style='float:right; padding-right:8px;'&gt;&lt;a href='http://www.tableausoftware.com/public/about-tableau-products?ref=https://public.tableausoftware.com/views/AdultObesityintheUnitedStates/Dashboard1' target='_blank'&gt;Learn About Tableau&lt;/a&gt;&lt;/div&gt;&lt;/div&gt;</content><category term="Tableau"></category><category term="Data viz"></category></entry></feed>

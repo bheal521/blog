@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ben Healy, Being a statistician means never having to say you're certain">
+
+        <link rel="alternate"  href="http://bheal521.github.io/feeds/all.atom.xml" type="application/atom+xml" title="Ben Healy Full Atom Feed"/>
+        <link rel="alternate" href="http://bheal521.github.io/Ben's Feed" type="application/rss+xml" title="Ben Healy RSS Feed"/>
+
+        <title>Continued Analysis of Pitchfork Reviews // Ben Healy // Being a statistician means never having to say you're certain</title>
+
+    <link href="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/favicon.ico" rel="icon">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../theme/css/pure.css">
+    <link rel="stylesheet" href="../../../theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background-image: url('https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/desk cover image.jpg')">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg">
+                            <h1 class="brand-main"><a href="../../..">Ben Healy</a></h1>
+                            <p class="tagline">Being a statistician means never having to say you're certain</p>
+                                <p class="social">
+                                    <a href="https://github.com/bheal521">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="https://twitter.com/bheal521">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                    <a href="mailto:peterbenjamin.healy@gmail.com?Subject=Howdy">
+                                        <i class="fa fa-envelope fa-3x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/pbhealy">
+                                        <i class="fa fa-linkedin-square fa-3x"></i>
+                                    </a>
+                                    <a href="https://play.spotify.com/user/bheal521">
+                                        <i class="fa fa-spotify fa-3x"></i>
+                                    </a>
+                                </p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>Continued Analysis of Pitchfork Reviews</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="../../../tag/r.html">R</a>
+                                <a class="post-category" href="../../../tag/music.html">music</a>
+                                <a class="post-category" href="../../../tag/pitchfork.html">Pitchfork</a>
+                        </p>
+                </header>
+            </section>
+            <p>The last few days I've looked over a lot of great information on natural language processing and sentiment analysis. There are plenty of really great examples 
+of how this has been done. Many of the <a href="http://www.sjwhitworth.com/sentiment-analysis-in-python-using-nltk/">examples</a> I found dealt with classifying tweets 
+as negative or positive. But this same classification of text and machine learning is how something like spam-email works. Ultimately, what I'd like to do is build 
+a model that learns to predict the score given to a Pitchfork review by analyzing its text. I've started working on it, but think that it's going to take some 
+serious effort to figure out how to best train the model on the ~10,000 reviews I have in my database in order to look at new reviews and correctly classify 
+the score.</p>
+<p>But before really diving into some more serious natural language processing and machine learning, I thought I'd look for an answer to a question I've had 
+about Pitchfork for a while. That is, if a band that has been reviewed by Pitchfork before comes out with additional albums, are those albums penalized in score
+for not being new enough? For example, there is a band called <a href="http://pitchfork.com/artists/28390-sleigh-bells/">Sleigh Bells</a> that have had three of their
+albums reviewed by Pitchfork. Their first album, <a href="http://pitchfork.com/reviews/albums/14251-treats/">Treats</a>, was released in 2010 and brought this new 
+<em>BIG</em> sound that was described by the reviewer as music that,</p>
+<blockquote>
+<p>just seemed bigger than it had before, 
+like it took up more space and hit<br>
+with more force and went further than 
+once seemed possible.</p>
+</blockquote>
+<p>The writer reviewed the album very favorably and awarded it an 8.7, enough to get it on the <a href="http://pitchfork.com/reviews/best/albums/">Best New Music</a> portion of the website, which I'm sure
+ had lots of benefits in terms of gaining new listeners. I know that is where I first saw them. But Sleigh Bells released two more albums in the three years that
+ followed and received an 8.2 and then a 5.9. Now, just because a band created a great album does not mean that all albums after it will also be great. I realize
+ this and also understand that the reviewing of music is about as subjective as it gets... But I believe that a band that creates a first album worthy of a 
+ high Pitchfork rating is more likely to do so again in future work. In this specific example, I don't even disagree on the order in which
+ the albums are ranked. As a Sleigh Bells fan, I think they got progressively worse. But I have a tough time rationalizing a drop from 8.2 on their 
+ <a href="http://pitchfork.com/reviews/albums/16297-reign-of-terror/">second album</a> to a 5.9 on their 
+ <a href="http://pitchfork.com/reviews/albums/18594-sleigh-bells-bitter-rivals/">third</a>. The big change over this three year period was Sleigh Bell's steady 
+ climb into main steam music. My hypothesis was that Pitchfork penalizes bands with abnormally low scores after their initial releases due to the fact those
+ bands become known and <em>so0o0o mainstream bro</em>.</p>
+<p>To test my hypothesis, I first looked at the bands that had been reviewed the most on Pitchfork. Why, you ask? Well -- it doesn't really provide any useful
+information in answering my question but I was sorta wondering... and it's my blog post so I'll do what I want! The table below has the bands that have
+had at least 10 albums reviewed by Pitchfork along with their average score and average word length of the reviews written on them.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Artist</th>
+<th align="left"># Albums Reviewed</th>
+<th align="left">Average Score</th>
+<th align="left">Average Review Word Count</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Animal Collective</td>
+<td align="left">10</td>
+<td align="left">7.9</td>
+<td align="left">769</td>
+</tr>
+<tr>
+<td align="right">Guided By Voices</td>
+<td align="left">10</td>
+<td align="left">6.8</td>
+<td align="left">836</td>
+</tr>
+<tr>
+<td align="right">Lil Wayne</td>
+<td align="left">10</td>
+<td align="left">6.6</td>
+<td align="left">807</td>
+</tr>
+<tr>
+<td align="right">Mogwai</td>
+<td align="left">10</td>
+<td align="left">6.9</td>
+<td align="left">670</td>
+</tr>
+<tr>
+<td align="right">R.E.M.</td>
+<td align="left">11</td>
+<td align="left">8.2</td>
+<td align="left">883</td>
+</tr>
+<tr>
+<td align="right">Xiu Xiu</td>
+<td align="left">11</td>
+<td align="left">7.1</td>
+<td align="left">709</td>
+</tr>
+<tr>
+<td align="right">Four Tet</td>
+<td align="left">12</td>
+<td align="left">7.5</td>
+<td align="left">748</td>
+</tr>
+<tr>
+<td align="right">Robert Pollard</td>
+<td align="left">15</td>
+<td align="left">5.9</td>
+<td align="left">615</td>
+</tr>
+<tr>
+<td align="right">The Beatles</td>
+<td align="left">19</td>
+<td align="left">9.1</td>
+<td align="left">978</td>
+</tr>
+</tbody>
+</table>
+<p>Xiu Xiu was definitely a surprise for me, I didn't realize they had so much music out... Also, remember that this is just the most recent 10,000 music reviews
+on the site so it is entirely possible that some of these bands have additional albums that were reviewed very early on in Pitchfork's history that I did not
+scrape. It is clear that R.E.M. is given lots of respect, but nobody touches The Beatles, cuz duh.</p>
+<p>But back to my question. In order to see whether or not bands got progressively worse scores the more albums they came out with, I plotted albums by their
+release number (a band's n<em>th</em> album) and the score it received. As is expected, the number of data points drops off as you get to higher numbered album releases.
+This is because, by definition, every band that has a review on Pitchfork has a first album, but fewer have a second album. Even fewer have a third album that was
+reviewed, and so on. By the time we get out past ten, the only bands for which there are data points are the ones included in the table above. With that in mind,
+take a look:</p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/pitchfork_bias.png" alt="Pitchfork-bias" width="100%", height="110%"></p>
+<p>The dots plotted in black represent all of the album reviews, and the larger blue dots represent the average score given to that album number. For example,
+the average score given to a band's 9th album reviewed on Pitchfork was just shy of 8. While it's hard to be confident in any findings to the right half of 
+the graph, it's interesting to see that the average score is actually increasing slightly as we go from a band's first album, to their second, all the 
+way through their 6th. Looks like I was wrong. </p>
+<h2>Does Pitchfork Give More Words to Higher Rated Bands?</h2>
+<p>While looking at the word count of the various writers at Pitchfork, I began to wonder if Pitchfork reviews were longer for bands they rated highly
+and shorter for others. The graph below plots all of the bands reviewed by Pitchfork by their average review score versus the average word count for their
+reviews. The line in blue running through the graph is a sample regression model to help visualize the relationship. </p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/pitchfork_scoreVSlength.png" alt="Pitchfork-score-vs-length" width="100%", height="110%"></p>
+<p>You can see that the bands that are rated the highest definitely seem to get some extra attention. What is most striking, is the cluster of bands hovering
+right around a rating of 7 and a word count of about 600. It seems that Pitchfork likely has a suggested length for its reviews, and that the vast majority
+of bands are getting scores near 7. This could be for a number of reasons, but I'd imagine that what might seem like a high average for scores is because only
+albums and bands that are pre-screened to some extent get selected for a review. Pitchfork isn't just reviewing every album they can get their hands on.</p>
+<p>See something interesting here? Any questions or suggestions on further exploration of this data? All feedback is welcome below in the comments, or feel free to 
+get in touch with me using the method of your preference on my <a href="http://bheal521.github.io/pages/contact.html">contacts page</a>.</p>
+            <a href="#" class="go-top">Go Top</a>
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "bheal521"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+<footer class="footer">
+    <p>&copy; Ben Healy &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-49434230-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+
+</body>
+</html>

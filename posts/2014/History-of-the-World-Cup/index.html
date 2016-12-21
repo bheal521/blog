@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ben Healy, Being a statistician means never having to say you're certain">
+
+        <link rel="alternate"  href="http://bheal521.github.io/feeds/all.atom.xml" type="application/atom+xml" title="Ben Healy Full Atom Feed"/>
+        <link rel="alternate" href="http://bheal521.github.io/Ben's Feed" type="application/rss+xml" title="Ben Healy RSS Feed"/>
+
+        <title>World Cup // Ben Healy // Being a statistician means never having to say you're certain</title>
+
+    <link href="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/favicon.ico" rel="icon">
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.3.0/pure-min.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../theme/css/pure.css">
+    <link rel="stylesheet" href="../../../theme/css/pygments.css">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fitvids/1.0.1/jquery.fitvids.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".content").fitVids();
+        });
+    </script>
+</head>
+
+<body>
+    <div class="pure-g-r" id="layout">
+        <div class="sidebar pure-u">
+            <div class="cover-img" style="background-image: url('https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/desk cover image.jpg')">
+                <div class="cover-body">
+                    <header class="header">
+                        <hgroup>
+                            <img class="avatar" src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/myAvatar.jpg">
+                            <h1 class="brand-main"><a href="../../..">Ben Healy</a></h1>
+                            <p class="tagline">Being a statistician means never having to say you're certain</p>
+                                <p class="social">
+                                    <a href="https://github.com/bheal521">
+                                        <i class="fa fa-github fa-3x"></i>
+                                    </a>
+                                    <a href="https://twitter.com/bheal521">
+                                        <i class="fa fa-twitter fa-3x"></i>
+                                    </a>
+                                    <a href="mailto:peterbenjamin.healy@gmail.com?Subject=Howdy">
+                                        <i class="fa fa-envelope fa-3x"></i>
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/pbhealy">
+                                        <i class="fa fa-linkedin-square fa-3x"></i>
+                                    </a>
+                                    <a href="https://play.spotify.com/user/bheal521">
+                                        <i class="fa fa-spotify fa-3x"></i>
+                                    </a>
+                                </p>
+                        </hgroup>
+                    </header>
+                </div>
+            </div>
+        </div>
+    <div class="pure-u">
+        <div class="content">
+            <section class="post">
+                <header class="post-header">
+                    <h1>World Cup</h1>
+                        <p class="post-meta">
+                            // under                                 <a class="post-category" href="../../../tag/r.html">R</a>
+                                <a class="post-category" href="../../../tag/soccer.html">soccer</a>
+                                <a class="post-category" href="../../../tag/world-cup.html">world cup</a>
+                        </p>
+                </header>
+            </section>
+            <p>With the World Cup almost a week away, I've been reading up on the teams headed to Brazil and trying to stay positive 
+about the chances that the US have of making it out of the group stage. While there is no shortage of coverage on all of the
+major teams and players, I enjoyed Professor Stephen Hawking's <a href="http://blog.paddypower.com/wp-content/uploads/2014/05/hawking-report_WC2014.pdf">World Cup Study</a>
+that looks at the conditions that best suit England in a World Cup match. What it lacks in quantitative rigor, it more than makes up for in
+playfulness. Hawking looks at a number of factors and their correlation to England's success on the pitch, including: distance from home, game-day temperature,
+time of kick-off, color of jersey worn, nationality of the ref, and the team's formation. According to him, England plan to employ a 4-3-3 formation and are
+crossing their fingers for a European ref and a 3pm kick-off time.</p>
+<p>As I've prepared myself to watch endless hours of this World Cup, I started wondering about past cups. Analysts keep mentioning that no European team has
+won a World Cup on South American soil. But I don't have a very good idea of who has won in general. I remember watching the past couple... going backwards I could
+remember that Spain, Italy and Brazil had won the past three. But I struggled to remember that France had won in '98. Though I think I might still own a tee shirt
+with the logo from the 98' World Cup on it... a weird bird of sorts...</p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/France98mascot.png" alt="France98-mascot" width="50%", height="50%"></p>
+<p>I headed to Wikipedia to scrape the location of each World Cup, the teams that attended, and their respective performances. Once I had this information,
+I threw together a map of each World Cup showing all countries that attended in blue along with the host country in red. Using <a href="http://http://gifmaker.me/">GifMaker.me</a>
+I stitched the images together to create a single GIF of the history of the World Cup.</p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/WC_Years.gif" alt="WC-history" width="100%", height="100%"></p>
+<p>In more succinct form, the map below shows all countries that have attended a World Cup and is shaded to indicate the number of World Cups they have been to.
+Brazil, Germany, and Italy are in a league of their own in terms of World Cup pedigree -- each has been to more than fifteen cups (there have only been 19!).
+The most striking thing I took away from the map below was just how minimally the African continent has broken into World Cups. The only country that has 
+consistently qualified is Cameroon, with 7 appearances.</p>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Worldcup_Appearances_Withlegend.png" alt="WC-appearances" width="100%", height="100%"></p>
+<p>Making it to the World Cup is absolutely an achievement, but those that have won belong to a truly elite group. There are only 8 countries that have won, 
+they are listed in the table below and shown in the subsequent map.</p>
+<table>
+<thead>
+<tr>
+<th align="right">Country</th>
+<th align="left"># World Cup Wins</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">Brazil</td>
+<td align="left">5</td>
+</tr>
+<tr>
+<td align="right">Italy</td>
+<td align="left">4</td>
+</tr>
+<tr>
+<td align="right">Germany</td>
+<td align="left">3</td>
+</tr>
+<tr>
+<td align="right">Argentina</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="right">Uruguay</td>
+<td align="left">2</td>
+</tr>
+<tr>
+<td align="right">Spain</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="right">France</td>
+<td align="left">1</td>
+</tr>
+<tr>
+<td align="right">England</td>
+<td align="left">1</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/WorldCup_Winners.png" alt="WC-appearances" width="100%", height="100%"></p>
+            <a href="#" class="go-top">Go Top</a>
+    <div class="comments">
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = "bheal521"; // required: replace example with your forum shortname
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function() {
+                var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    </div>
+<footer class="footer">
+    <p>&copy; Ben Healy &ndash;
+        Built with <a href="https://github.com/PurePelicanTheme/pure-single">Pure Theme</a>
+        for <a href="http://blog.getpelican.com/">Pelican</a>
+    </p>
+</footer>        </div>
+    </div>
+    </div>
+    <script>
+        var $top = $('.go-top');
+
+        // Show or hide the sticky footer button
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 200) {
+                $top.fadeIn(200);
+            } else {
+                $top.fadeOut(200);
+            }
+        });
+
+        // Animate the scroll to top
+        $top.click(function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop: 0}, 300);
+        })
+
+        // Makes sure that the href="#" attached to the <a> elements
+        // don't scroll you back up the page.
+        $('body').on('click', 'a[href="#"]', function(event) {
+            event.preventDefault();
+        });
+    </script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-49434230-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+    </script>
+
+</body>
+</html>

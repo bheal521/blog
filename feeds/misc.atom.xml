@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Ben Healy - misc</title><link href="http://bheal521.github.io/" rel="alternate"></link><link href="http://bheal521.github.io/feeds/misc.atom.xml" rel="self"></link><id>http://bheal521.github.io/</id><updated>2016-04-06T00:00:00-04:00</updated><entry><title>Using Travis CI</title><link href="http://bheal521.github.io/posts/2016/Automate-with-Travis-CI/" rel="alternate"></link><published>2016-04-06T00:00:00-04:00</published><updated>2016-04-06T00:00:00-04:00</updated><author><name>Ben Healy</name></author><id>tag:bheal521.github.io,2016-04-06:/posts/2016/Automate-with-Travis-CI/</id><summary type="html">&lt;p&gt;Simplifying the blog one step further with the help of a new tool.&lt;/p&gt;</summary><content type="html">&lt;p&gt;Static site generators like Pelican are great for their simplicity. But my current workflow still requires several steps:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;1. Write the blog post in Markdown
+2. Run the python script to turn the Markdown files into HTML
+3. Use GitHub to upload the newest version of both the source blog files (written in markdown) and the published website files.
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Travis helps eliminate the later steps by watching the GitHub repo with the blog source files, and when there is a noticeable change -- it automatically runs the python script to turn the Markdown to HTML and push the new files to the published repo.&lt;/p&gt;
+&lt;p&gt;Thanks to the helpful instructions from sites like Kevin Yap's it was pretty straighforward to set up too: &lt;a href="http://kevinyap.ca/2014/06/deploying-pelican-sites-using-travis-ci/"&gt;http://kevinyap.ca/2014/06/deploying-pelican-sites-using-travis-ci/&lt;/a&gt;.&lt;/p&gt;</content><category term="Blog"></category><category term="Automate"></category></entry></feed>
