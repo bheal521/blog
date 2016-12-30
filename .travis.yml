@@ -6,6 +6,6 @@ branches:
   - master
 install:
 - pip install -r requirements.txt
-- make download
+- make publish github
 script:
 - make publish
