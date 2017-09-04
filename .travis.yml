@@ -14,6 +14,3 @@ deploy:
   target_branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  github_url: www.pbhealy.com
-  on:
-    branch: master
