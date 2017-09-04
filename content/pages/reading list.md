@@ -5,7 +5,7 @@ Slug: reading_list
 
 ##Here's a list of some things I've been reading recently.##
 
-[Attacking Discrimination in ML}(https://research.google.com/bigpicture/attacking-discrimination-in-ml/): Interesting approach in setting more equitable cutoff values for algorithm decisions.
+[Attacking Discrimination in ML)(https://research.google.com/bigpicture/attacking-discrimination-in-ml/): Interesting approach in setting more equitable cutoff values for algorithm decisions.
 
 [Weapons of Math Destruction](https://weaponsofmathdestructionbook.com/): Pop culture book with a conversation on responsible data science.
 
