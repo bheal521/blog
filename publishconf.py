@@ -12,7 +12,7 @@ from pelicanconf import *
 
 SITEURL = 'http://pbhealy.com'
 RELATIVE_URLS = True
-#DISPLAY_PAGES_ON_MENU = True
+DISPLAY_PAGES_ON_MENU = True
 
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
