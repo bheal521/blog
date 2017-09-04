@@ -7,7 +7,7 @@ branches:
 install:
 - pip install -r requirements.txt
 script:
-- make publish github
+- make publish
 deploy:
   provider: pages
   repo: bheal521.github.io
