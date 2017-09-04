@@ -7,13 +7,13 @@ branches:
 install:
 - pip install -r requirements.txt
 script:
-- make publish
+- make publish github
 deploy:
   provider: pages
-  repo: bheal521/bheal521.github.io
+  repo: bheal521.github.io
   target_branch: master
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
-  local_dir: output
+  github_url: www.pbhealy.com
   on:
     branch: master
