@@ -22,13 +22,13 @@ the hometowns of all of the players and plopped them on a map.
 
 So... what's the deal? Here's a map with all of the players from the US that were in the tournament, shaded by their position:
 
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/All-Players-Map.png" alt="All-Players-Map.png" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/All-Players-Map.png" alt="All-Players-Map.png" width="100%", height="100%">
 
 Lots of players from the urban areas across the US, not very surprising. Maybe a slight concentration of guards in the Northeast
 running through NYC, Philly, and DC -- but overall nothing jumped out at me as being surprising. But this is a map of all of the playersin the 
 tournament, not just the good teams. Maybe better players, defined as players from the top seeded teams, were from particular areas of the country?
 
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/seed-map.png" alt="Seeded-NCAA-Map" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/seed-map.png" alt="Seeded-NCAA-Map" width="100%", height="100%">
 
 Looks like a group of solid players, or at least players on solid teams, are from the midwest. Wisconsin, Indiana, Illinois, Michigan, don't have very high
 population density but have quite a few players in the tournament this year. The majority of them seem to be from 8 seeds or better.
@@ -119,8 +119,8 @@ Hawaii coming logically in last. But pretty nuts they have, on average, an addit
 One last set of maps for good measure -- take a look at where the kids are from on the two teams in the finals: 'Nova and UNC (can you tell which is which? ha). If closeness is any indicator of success, I better hurry and 
 get some money on the boys from Philly.
 
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/Villanova.png" alt="NCAA-Villanova" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/Villanova.png" alt="NCAA-Villanova" width="100%", height="100%">
 
 
-<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/images/North-Carolina.png" alt="NCAA-UNC" width="100%", height="100%">
+<img src="https://raw.githubusercontent.com/bheal521/bheal521.github.io/master/North-Carolina.png" alt="NCAA-UNC" width="100%", height="100%">
 

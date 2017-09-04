@@ -5,12 +5,8 @@ Slug: reading_list
 
 ##Here's a list of some things I've been reading recently.##
 
-First article: link
+[Attacking Discrimination in ML}(https://research.google.com/bigpicture/attacking-discrimination-in-ml/): Interesting approach in setting more equitable cutoff values for algorithm decisions.
 
-Second article: link
+[Weapons of Math Destruction](https://weaponsofmathdestructionbook.com/): Pop culture book with a conversation on responsible data science.
 
-Third article: links	
-
-Fourth artice: blah	
-
-Let's try a [link](http://www.google.com)		
+[Sneaker Resale Market](https://fivethirtyeight.com/features/you-see-sneakers-these-guys-see-hundreds-of-millions-in-resale-profit/): Data and observations on sneakerhead culture, and why Nike chooses to limit supply in their shoe releases.
