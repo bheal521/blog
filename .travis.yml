@@ -8,8 +8,3 @@ install:
 - pip install -r requirements.txt
 script:
 - make publish
-deploy:
-  repo: bheal521.github.io
-  target_branch: master
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
