@@ -7,9 +7,8 @@ branches:
 install:
 - pip install -r requirements.txt
 script:
-- make publish
+- make publish github
 deploy:
-  provider: pages
   repo: bheal521.github.io
   target_branch: master
   skip_cleanup: true
